@@ -19,14 +19,19 @@
 .container {
     display: grid; 
     grid-auto-columns: 1fr; 
-    grid-template-columns: 0.6fr 1.4fr; 
+    grid-template-columns: 0.5fr 1.6fr;
     grid-template-rows: 0.2fr 1.8fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "main_header_section main_header_section"
       ". ."; 
       margin: 0;
-  }
+}
+
+.icon_text_center {
+    align-items: center;
+    gap: 6px;
+}
 
 /* Main Header */
 .main_header_section { 
@@ -48,17 +53,118 @@
     color: white;
 }
 
-/* Left Side Navbar */
+    /* Left Side Navbar */
 
 .left_side_navbar_section {
     background-color: #F7F7F7;
-    padding-left: 20px;
+    padding: 30px 20px ;
+    max-width: 350px;
+    border: 1px solid black;
 }
 
-.left_side_navbar_list_title {
-    align-items: center;
+.left_side_navbar_list_all_titles {
+    padding: 0.1em 0.5em;
+    max-height: 3em;
 }
 
 .left_side_navbar_task_title {
     font-size: 1.2rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.left_side_navbar_first_list, .left_side_navbar_second_list {
+    padding-left: 0;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.left_side_navbar_lists_container {
+    gap: 1em;
+    flex-direction: column;
+    display: flex;
+}
+
+.left_side_navbar_list_titles {
+    border: 1px solid black;
+}
+
+.left_side_navbar_first_list_main_title, .left_side_navbar_second_list_main_title {
+    margin: 0;
+}
+
+        /* First List Left Side Navbar */
+
+.left_side_navbar_first_list {
+    margin: 1px;
+}
+
+        /* Second List Left Side Navbar */
+
+.left_side_navbar_second_list_container {
+    margin: 3em 0;
+}
+
+.left_side_navbar_second_list {
+    margin: 0;
+}
+
+.left_side_navbar_second_list_titles {
+    justify-content: space-between;
+}
+
+.left_side_navbar_second_list_icons_container {
+    align-items: baseline;
+}
+
+
+/* Main Content Section */
+
+.main_content_section {
+    padding: 13px 4em;
+    border: 1px solid black;
+}
+
+.main_content_section_main_title_container {
+    justify-content: center;
+    border: 1px solid black;
+}
+
+    /* Main Content Section - Content  */
+
+.main_content_section_task_title {
+    margin: 0;
+}
+
+.main_content_section_task_container {
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+    border: 1px solid black;
+}
+
+.main_content_section_task_list_container {
+    flex-direction: column;
+    gap: 1em;
+}
+
+.main_content_section_individual_task {
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.main_content_section_task_description_left {
+    gap: 0.2em;
+}
+
+.main_content_section_task_description_right {
+    align-items: center;
+    gap: 0.7em;
+    border: 1px solid black;
+}
+
+.main_content_section_task_description_right_icons {
+    
 }

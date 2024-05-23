@@ -15,36 +15,36 @@
         <h1 class="main_header_main_title">My To-Do LIST</h1>
     </header>
     <nav class="left_side_navbar_section">
-        <section class="left_side_navbar_list_title left_side_navbar_first_list_container">
-            <header class="left_side_navbar_first_list_main_title_container">
+        <section class="left_side_navbar_lists_container left_side_navbar_first_list_container">
+            <header class="left_side_navbar_list_all_titles left_side_navbar_first_list_main_title_container">
                 <h3 class="left_side_navbar_first_list_main_title">My Tasks</h3>
             </header>
-            <ul class="left_side_navbar_first_list">
-                <li id="left_side_navbar_first_list_all_tasks" class="left_side_navbar_list_title left_side_navbar_first_list flex">
+            <ul class="left_side_navbar_first_list flex">
+                <li id="left_side_navbar_first_list_all_tasks" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_first_list_titles flex">
                     <svg class="left_side_navbar_first_list_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
                     </svg>                      
                     <p class="left_side_navbar_task_title">All Tasks</p>
                 </li>
-                <li id="left_side_navbar_first_list_today" class="left_side_navbar_list_title left_side_navbar_first_list flex">
+                <li id="left_side_navbar_first_list_today" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_first_list_titles flex">
                     <svg class="left_side_navbar_first_list_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16M8 14h8m-4-7V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"/>
                     </svg>                      
                     <p class="left_side_navbar_task_title">Today</p>
                 </li>
-                <li id="left_side_navbar_first_list_this_week" class="left_side_navbar_list_title left_side_navbar_first_list flex">
+                <li id="left_side_navbar_first_list_this_week" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_first_list_titles flex">
                     <svg class="left_side_navbar_first_list_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
                     </svg>                      
                     <p class="left_side_navbar_task_title">This Week</p>
                 </li>
-                <li id="left_side_navbar_first_list_urgent" class="left_side_navbar_list_title left_side_navbar_first_list flex">
+                <li id="left_side_navbar_first_list_urgent" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_first_list_titles flex">
                     <svg class="left_side_navbar_first_list_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                     </svg>
                     <p class="left_side_navbar_task_title">Urgent</p>
                 </li>
-                <li id="left_side_navbar_first_list_completed" class="left_side_navbar_list_title left_side_navbar_first_list flex">
+                <li id="left_side_navbar_first_list_completed" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_first_list_titles flex">
                     <svg class="left_side_navbar_first_list_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
                     </svg>
@@ -52,72 +52,88 @@
                 </li>
             </ul>
         </section>
-        <section class="left_side_navbar_second_list_container">
-            <header class="left_side_navbar_list_title left_side_navbar_second_list_main_title_container flex">
+        <section class="left_side_navbar_lists_container left_side_navbar_second_list_container">
+            <header class="left_side_navbar_list_all_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_main_title_container flex">
                 <h3 class="left_side_navbar_second_list_main_title">My Projects</h3>
                 <svg class="left_side_navbar_second_list_main_title_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>                  
             </header>
-            <ul class="left_side_navbar_second_list">
-                <li id="second_navbar_newProject" class="left_side_navbar_list_title left_side_navbar_second_list_project flex">
+            <ul class="left_side_navbar_second_list flex">
+                <li id="second_navbar_newProject" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex">
                     <p class="left_side_navbar_task_title">New Project</p>
-                    <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>                          
-                    <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
+                    <div class="left_side_navbar_second_list_icons_container flex">
+                        <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                        </svg>                          
+                        <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                        </svg>
+                    </div>
                 </li>
-                <li id="second_navbar_anotherNewproject" class="left_side_navbar_list_title left_side_navbar_second_list_project flex">
-                    <p class="left_side_navbar_task_title">Another New Project</p>
-                    <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>                          
-                    <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
+                <li id="second_navbar_anotherNewproject" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex">
+                    <p class="left_side_navbar_task_title">Another New Project again and again</p>
+                    <div class="left_side_navbar_second_list_icons_container flex">
+                        <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                        </svg>
+                        <svg class="left_side_navbar_second_list_project_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                        </svg>
+                    </div>
                 </li>
             </ul>
         </section>
     </nav>
     <main class="main_content_section">
-        <header class="main_content_section_main_title_container">
+        <header class="main_content_section_main_title_container icon_text_center flex">
             <svg class="main_content_section_main_title_container_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
             </svg>
             <h2 class="main_content_section_main_title">All</h2>
         </header>
-        <section class="main_content_section_task_section">
+        <section class="main_content_section_task_container flex">
             <h3 class="main_content_section_task_title">Tasks</h3>
-            <section class="main_content_section_task_list_container">
-                <article class="main_content_section_task">
-                    <input type="checkbox" name="task_checkbox" class="main_content_section_task_checkbox" id="task1">
-                    <p class="main_content_section_task_description">Here is going to be my first Pending Task.</p>
-                    <p class="main_content_section_task_due_date">Jun-26th-2024</p>
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>                          
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                    </svg>                  
+            <section class="main_content_section_task_list_container flex">
+                <article class="main_content_section_individual_task flex">
+                    <div class="main_content_section_task_description_left flex">
+                        <input type="checkbox" name="task_checkbox" class="main_content_section_task_checkbox" id="task1">
+                        <p class="main_content_section_task_description_text">Here is going to be my first Pending Task.</p>
+                    </div>
+                    <div class="main_content_section_task_description_right flex">
+                        <p class="main_content_section_task_due_date">Jun-26th-2024</p>
+                        <div class="main_content_section_task_description_right_icons flex">
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                            </svg>                          
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                            </svg>
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>                  
+                        </div>
+                    </div>
                 </article>
-                <article class="main_content_section_task">
-                    <input type="checkbox" name="task_checkbox" class="main_content_section_task_checkbox" id="task1">
-                    <p class="main_content_section_task_description">Here is going to be my second Pending Task.</p>
-                    <p class="main_content_section_task_due_date">Dec-25th-2024</p>
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                    </svg>                          
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                    <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                    </svg>                  
+                <article class="main_content_section_individual_task flex">
+                    <div class="main_content_section_task_description_left flex">
+                        <input type="checkbox" name="task_checkbox" class="main_content_section_task_checkbox" id="task1">
+                        <p class="main_content_section_task_description_text">Here is going to be my second Pending Task.</p>
+                    </div>
+                    <div class="main_content_section_task_description_right flex">
+                        <p class="main_content_section_task_due_date">Dec-25th-2024</p>
+                        <div class="main_content_section_task_description_right_icons flex">
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+                            </svg>                          
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                            </svg>
+                            <svg class="main_content_section_task_icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>                  
+                        </div>
+                    </div>
                 </article>
             </section>
         </section>
