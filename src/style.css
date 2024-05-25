@@ -15,6 +15,10 @@
     display: flex;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 /* Layout */
 .container {
     display: grid; 
@@ -34,6 +38,14 @@
     gap: 6px;
 }
 
+.interactive_icons:hover {
+    scale: 1.2;
+}
+
+.current_option:hover {
+    box-shadow: inset 0 -8em 0 0 #F7F7F7;
+    transition: .3s;
+}
 
 
 /* Main Header */
@@ -66,6 +78,7 @@
     max-width: 350px;
     height: 100%;
     overflow: auto;
+    color: #696969;
 }
 
 .left_side_navbar_list_all_titles {
@@ -79,6 +92,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
     width: 80%;
+    padding: 0.7em 0;
+}
+
+.left_side_navbar_list_titles:hover {
+    border: 0.1px solid #696969;
 }
 
 .left_side_navbar_first_list, .left_side_navbar_second_list {
@@ -100,6 +118,11 @@
 
 .left_side_navbar_first_list_main_title, .left_side_navbar_second_list_main_title {
     margin: 0;
+}
+
+.left_side_navbar_first_list_main_title_container, .left_side_navbar_second_list_main_title_container {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #696969;
 }
 
         /* First List Left Side Navbar */
@@ -154,6 +177,10 @@
     border-bottom: 1px solid black;
 }
 
+.main_content_section_main_title_container_icon {
+    scale: 1.4;
+}
+
 .main_content_section_task_container {
     flex-direction: column;
     gap: 1em;
@@ -162,34 +189,34 @@
 
 .main_content_section_task_list_container {
     flex-direction: column;
-    gap: 1em;
 }
 
 .main_content_section_individual_task {
+    font-size: 1.1rem;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid black; */
     border-bottom: 1px solid #e2e2e2;
+    padding: 0.5em;
 }
 
 .main_content_section_task_description_left {
-    gap: 0.2em;
+    gap: 0.6em;
     width: 70%;
 }
 
 .main_content_section_task_description_text {
     width: 100%;
+    padding: 0.6em 0;
 }
 
 .main_content_section_task_description_right {
     align-items: center;
-    gap: 0.7em;
-    /* border: 1px solid black; */
+    gap: 1.5em;
     padding-right: 0.5em;
 }
 
 .main_content_section_task_description_right_icons {
-    
+    gap: 0.3em;
 }
 
 
