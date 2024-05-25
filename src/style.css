@@ -95,10 +95,6 @@
     padding: 0.7em 0;
 }
 
-.left_side_navbar_list_titles:hover {
-    border: 0.1px solid #696969;
-}
-
 .left_side_navbar_first_list, .left_side_navbar_second_list {
     padding-left: 0;
     flex-direction: column;
@@ -114,6 +110,11 @@
 .left_side_navbar_list_titles {
     background-color: white;
     color: #696969;
+    border: 0.1px solid white;
+}
+
+.left_side_navbar_list_titles:hover {
+    border: 0.1px solid #696969;
 }
 
 .left_side_navbar_first_list_main_title, .left_side_navbar_second_list_main_title {
