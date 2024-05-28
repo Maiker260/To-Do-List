@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --main_color: blue;
+    --main_color: linear-gradient(90deg, rgba(58,54,117,1) 0%, rgba(43,96,162,1) 39%, rgba(0,212,255,1) 100%);
+    --navbar_background: #F7F7F7;
+    --white: white;
+    --navbar_titles: #696969;
+    --main_content_titles: #616161;
+    --main_content_border: #e2e2e2;
 }
 
 * {
@@ -19,9 +24,12 @@
     cursor: pointer;
 }
 
+.grid {
+    display: grid;
+}
+
 /* Layout */
 .container {
-    display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 0.5fr 1.6fr;
     grid-template-rows: 0.2fr 1.8fr; 
@@ -54,7 +62,8 @@
     align-items: center;
     gap: 0.5em;
     background: rgb(58,54,117);
-    background: linear-gradient(90deg, rgba(58,54,117,1) 0%, rgba(43,96,162,1) 39%, rgba(0,212,255,1) 100%);    color: white;
+    background: var(--main_color);
+    color: white;
     padding-left: 20px;
 }
 
@@ -65,7 +74,7 @@
 
 .main_header_main_title {
     font-size: 2rem;
-    color: white;
+    color: var(--white);
 }
 
 
@@ -73,12 +82,12 @@
 /* Left Side Navbar */
 
 .left_side_navbar_section {
-    background-color: #F7F7F7;
+    background-color: var(--navbar_background);
     padding: 30px 20px ;
     max-width: 350px;
     height: 100%;
     overflow: auto;
-    color: #696969;
+    color: var(--navbar_titles);
 }
 
 .left_side_navbar_list_all_titles {
@@ -108,13 +117,13 @@
 }
 
 .left_side_navbar_list_titles {
-    background-color: white;
-    color: #696969;
-    border: 0.1px solid white;
+    background-color: var(--white);
+    color: var(--navbar_titles);
+    border: 0.1px solid var(--white);
 }
 
 .left_side_navbar_list_titles:hover {
-    border: 0.1px solid #696969;
+    border: 0.1px solid var(--navbar_titles);
 }
 
 .left_side_navbar_first_list_main_title, .left_side_navbar_second_list_main_title {
@@ -123,7 +132,8 @@
 
 .left_side_navbar_first_list_main_title_container, .left_side_navbar_second_list_main_title_container {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #696969;
+    border-bottom: 1px solid var(--navbar_titles);
+    justify-content: space-between;
 }
 
         /* First List Left Side Navbar */
@@ -134,6 +144,83 @@
 
 .left_side_navbar_first_list_titles {
     width: 100%;
+}
+
+            /* Modal to Add a New Task */
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.add_new_todo_task_dialog {
+    padding: 0;
+    border: none;
+    border-radius: calc(5px * 3.74);
+}
+
+.add_new_todo_task_dialog_container {
+    flex-direction: column;
+    border-radius: calc(5px * 3.74);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    min-width: 36em;
+    background-color: var(--navbar_background);
+    color: var(--navbar_titles);
+}
+
+.add_new_todo_task_dialog_main_title_container {
+    color: var(--white);
+    background: var(--main_color);
+    padding: 0.7em;
+    text-align: center;
+}
+
+.add_new_todo_task_dialog_input_area {
+    padding: 1em 2em;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 0px 0px;
+}
+
+.add_new_todo_task_input_label_container {
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.add_new_todo_task_input_label {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.add_new_todo_task_input {
+    font-size: 1rem;
+    width: 100%;
+    height: 70%;
+    color: var(--navbar_titles);
+    padding-left: 1em;
+    border: none;
+}
+
+.add_new_todo_task_input_due_date {
+    padding-left: 0.9em;
+}
+
+.add_new_todo_task_input_project, .add_new_todo_task_input_priority {
+    padding-left: 0.8em;
+}
+
+.new_task_create_btn {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    justify-self: center;
+    width: 50%;
+    height: 75%;
+    border-radius: 0.5em;
+    background: var(--main_color);
+    color: white;
+    border: none;
+    margin-top: 0.7em;
 }
 
         /* Second List Left Side Navbar */
@@ -154,6 +241,38 @@
     align-items: baseline;
 }
 
+            /* Modal to Add a New Project */
+
+.add_new_project_content_container {
+    height: 10em;
+    align-content: center;
+    justify-content: center;
+}
+
+.add_new_project_title_container {
+    align-items: center;
+    gap: 1em;
+}
+
+#add_new_project_title {
+    height: 3em;
+    max-width: 100%;
+}
+
+.add_new_project_btn {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    justify-self: center;
+    width: 50%;
+    height: 75%;
+    border-radius: 0.5em;
+    background: var(--main_color);
+    color: white;
+    border: none;
+    margin-top: 0.7em;
+}
+
 
 
 /* Main Content Section */
@@ -161,7 +280,7 @@
 .main_content_section {
     padding: 13px 4em;
     overflow: auto;
-    color: #616161;
+    color: var(--main_content_titles);
 }
 
 .main_content_section_main_title_container {
@@ -197,7 +316,7 @@
     font-size: 1.1rem;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid var(--main_content_border);
     padding: 0.5em;
 }
 
