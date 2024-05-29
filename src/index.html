@@ -22,9 +22,9 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
             </header>
-            <dialog id="add_new_todo_task_dialog" class="add_new_todo_task_dialog">
-                <div class="add_new_todo_task_dialog_container flex">
-                    <div class="add_new_todo_task_dialog_main_title_container">
+            <dialog id="add_new_todo_task_dialog" class="add_new_todo_task_dialog add_new_dialog">
+                <div class="add_new_todo_task_dialog_container add_new_dialog_container flex">
+                    <div class="add_new_todo_task_dialog_main_title_container add_new_dialog_main_title_container">
                         <h2 class="add_new_todo_task_dialog_main_title">Add a New Task</h2>
                     </div>
                     <form action="dialog" class="add_new_todo_task_dialog_input_area grid">
@@ -57,7 +57,7 @@
                                 <option value="high">Urgent</option>
                             </select>
                         </label>
-                        <button id="new_task_create_btn" class="new_task_create_btn pointer">Create Task</button>
+                        <button id="new_task_create_btn" class="new_task_create_btn new_create_btn pointer">Create Task</button>
                     </form>
                 </div>
             </dialog>
@@ -100,18 +100,20 @@
                 <svg id="add_new_todo_project_btn" class="interactive_icons left_side_navbar_second_list_main_title_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
-                <dialog id="add_new_project_dialog" class="add_new_todo_task_dialog">
-                    <div class="add_new_todo_task_dialog_container">
-                        <div class="add_new_todo_task_dialog_main_title_container">
-                            <h2 class="add_new_todo_task_dialog_main_title">Add a Project</h2>
+                <dialog id="add_new_project_dialog" class="add_new_project_dialog add_new_dialog">
+                    <div class="add_new_project_dialog_container add_new_dialog_container">
+                        <div class="add_new_project_dialog_main_title_container add_new_dialog_main_title_container">
+                            <h2 class="add_new_project_dialog_main_title">Add a Project</h2>
                         </div>
-                        <div class="add_new_project_content_container flex">
-                            <label for="add_new_project_title" class="add_new_project_title_container flex">
-                                <h3>Project Name:</h3>
-                                <input type="text" name="add_new_project_title" id="add_new_project_title">
-                            </label>
+                        <div class="add_new_project_content_container grid">
+                            <div class="add_new_project_content">
+                                <label for="add_new_project_title" class="add_new_project_title_container flex">
+                                    <h3>Project Name:</h3>
+                                    <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_project_title" placeholder="Name">
+                                </label>
+                            </div>
+                            <button class="new_project_create_btn new_create_btn pointer">Create Project</button>
                         </div>
-                        <button class="add_new_project_btn">Create Project</button>
                     </div>
                 </dialog>
             </header>

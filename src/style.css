@@ -146,19 +146,19 @@
     width: 100%;
 }
 
-            /* Modal to Add a New Task */
+            /* Modal Design*/
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-.add_new_todo_task_dialog {
+.add_new_dialog{
     padding: 0;
     border: none;
     border-radius: calc(5px * 3.74);
 }
 
-.add_new_todo_task_dialog_container {
+.add_new_dialog_container {
     flex-direction: column;
     border-radius: calc(5px * 3.74);
     box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -168,12 +168,14 @@ dialog::backdrop {
     color: var(--navbar_titles);
 }
 
-.add_new_todo_task_dialog_main_title_container {
+.add_new_dialog_main_title_container {
     color: var(--white);
     background: var(--main_color);
     padding: 0.7em;
     text-align: center;
 }
+
+            /* Modal to Add a New Task */
 
 .add_new_todo_task_dialog_input_area {
     padding: 1em 2em;
@@ -209,7 +211,7 @@ dialog::backdrop {
     padding-left: 0.8em;
 }
 
-.new_task_create_btn {
+.new_create_btn {
     font-size: 1rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -244,36 +246,32 @@ dialog::backdrop {
             /* Modal to Add a New Project */
 
 .add_new_project_content_container {
-    height: 10em;
-    align-content: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 0.5em 0 1em 0;
+}
+
+.add_new_project_content {
+    justify-self: center;
+    padding: 1em 0;
 }
 
 .add_new_project_title_container {
-    align-items: center;
     gap: 1em;
+    align-items: center;
 }
 
-#add_new_project_title {
-    height: 3em;
-    max-width: 100%;
-}
-
-.add_new_project_btn {
+.add_new_project_title {
     font-size: 1rem;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    justify-self: center;
-    width: 50%;
-    height: 75%;
-    border-radius: 0.5em;
-    background: var(--main_color);
-    color: white;
+    height: 3em;
+    max-width: 11em;
+    color: var(--navbar_titles);
+    padding-left: 1em;
     border: none;
-    margin-top: 0.7em;
 }
-
-
 
 /* Main Content Section */
 

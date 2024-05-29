@@ -1,3 +1,7 @@
+import createToDo from './create-ToDos';
+
+
+// Import CSS Files
 import './style.css';
 
 const showModalTask = document.querySelector("#add_new_todo_task_dialog");
@@ -8,6 +12,24 @@ const newProjectBtn = document.querySelector("#add_new_todo_project_btn");
 newTaskBtn.addEventListener("click", () => {
     showModalTask.showModal();
 });
+// newProjectBtn.addEventListener("click", () => {
+//     showModalProject.showModal();
+// });
+
+
+const globalList = createToDo();
+
 newProjectBtn.addEventListener("click", () => {
-    showModalProject.showModal();
+    globalList.addNewTasktoList();
+    console.log(globalList.toDoList);
 });
+
+
+const newTodoDialog = document.querySelector("dialog");
+
+newTodoDialog.addEventListener("click", (e) => {
+    console.log(e.target.localName);
+    console.log(e.target);
+    globalList.closeNewTaskModal(e);
+});
+// Close modal when clicking outside the Dialog
