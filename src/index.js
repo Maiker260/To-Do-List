@@ -1,35 +1,51 @@
+// JS Modules
 import createToDo from './create-ToDos';
-
+import closeNewTaskModal from './manage-modals';
 
 // Import CSS Files
 import './style.css';
 
-const showModalTask = document.querySelector("#add_new_todo_task_dialog");
-const showModalProject = document.querySelector("#add_new_project_dialog");
-const newTaskBtn = document.querySelector("#add_new_todo_task_btn");
-const newProjectBtn = document.querySelector("#add_new_todo_project_btn");
-
-newTaskBtn.addEventListener("click", () => {
-    showModalTask.showModal();
-});
-// newProjectBtn.addEventListener("click", () => {
-//     showModalProject.showModal();
-// });
 
 
-const globalList = createToDo();
+// Dialog Event Listeners
 
-newProjectBtn.addEventListener("click", () => {
-    globalList.addNewTasktoList();
-    console.log(globalList.toDoList);
-});
+    // New Task Section
+function newTaskEventListener() {
+
+    // Add new Task
+    const showModalTask = document.querySelector("#add_new_todo_task_dialog");
+    const newTaskBtn = document.querySelector("#add_new_todo_task_btn");
+
+    newTaskBtn.addEventListener("click", () => {
+        showModalTask.showModal();
+    });
+
+    // Create Task
+    const addNewTaskBtn = document.querySelector("#new_task_create_btn");
+    const globalList = createToDo();
+    const closeDialog = closeNewTaskModal()
+
+    addNewTaskBtn.addEventListener("click", e => {
+        console.log(closeDialog);
+        console.log(globalList.toDoList);
+    });
+
+}
+
+const newTaskDialog = newTaskEventListener();
 
 
-const newTodoDialog = document.querySelector("dialog");
 
-newTodoDialog.addEventListener("click", (e) => {
-    console.log(e.target.localName);
-    console.log(e.target);
-    globalList.closeNewTaskModal(e);
-});
-// Close modal when clicking outside the Dialog
+    // New Project Section
+// function newProjectEventListener() {
+
+//     const showModalProject = document.querySelector("#add_new_project_dialog");
+//     const newProjectBtn = document.querySelector("#add_new_todo_project_btn");
+
+//     newProjectBtn.addEventListener("click", () => {
+//         showModalProject.showModal();
+//     });
+// }
+
+
+

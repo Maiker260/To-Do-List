@@ -1,4 +1,4 @@
-export default function createToDo () {
+export default function createToDo() {
 
     const toDoList = [];
 
@@ -31,25 +31,6 @@ export default function createToDo () {
 
         // Add New Task to the List
         toDoList.push(newTask);
-    }
-
-
-    // Function to allow the user to close the Modal when clicking outside it.
-    function closeNewTaskModal(e) {
-
-        const dialogDimensions = e.getBoundingClientRect();
-
-        console.log(e + "test");
-
-        if (
-        e.clientX < dialogDimensions.left ||
-        e.clientX > dialogDimensions.right ||
-        e.clientY < dialogDimensions.top ||
-        e.clientY > dialogDimensions.bottom
-        ) {
-        e.close();
-        }
-
     }
 
     return {
