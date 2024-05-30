@@ -47,11 +47,12 @@
                         </label>
                         <label for="new_task_due_date" id="new_task_due_date_input" class="add_new_todo_task_input_label_container new_task_due_date_input flex">
                             <h3 class="add_new_todo_task_input_label">Due Date:</h3>
-                            <input class="add_new_todo_task_input add_new_todo_task_input_due_date" type="datetime-local" name="new_task_due_date" id="new_task_due_date" required>
+                            <input class="add_new_todo_task_input add_new_todo_task_input_due_date" type="date" name="new_task_due_date" id="new_task_due_date" required>
                         </label>
                         <label for="new_task_priority" id="new_task_priority_input" class="add_new_todo_task_input_label_container new_task_priority_input flex">
                             <h3 class="add_new_todo_task_input_label">Priority:</h3>
                             <select class="add_new_todo_task_input add_new_todo_task_input_priority" name="new_task_priority" id="new_task_priority" required>
+                                <option value="default" selected disabled>Select a Priority</option>
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="high">Urgent</option>
@@ -112,7 +113,7 @@
                                     <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_project_title" placeholder="Name">
                                 </label>
                             </div>
-                            <button class="new_project_create_btn new_create_btn pointer">Create Project</button>
+                            <button id="new_project_create_btn" class="new_project_create_btn new_create_btn pointer">Create Project</button>
                         </div>
                     </div>
                 </dialog>

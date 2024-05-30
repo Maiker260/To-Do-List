@@ -1,51 +1,77 @@
 // JS Modules
-import createToDo from './create-ToDos';
-import closeNewTaskModal from './manage-modals';
+import createNewTask from './scripts/createNewTask';
+import manageModals from './scripts/manageModals';
+import createNewProject from './scripts/createNewProject';
 
-// Import CSS Files
+// CSS Files
 import './style.css';
-
 
 
 // Dialog Event Listeners
 
-    // New Task Section
+    // New Task
 function newTaskEventListener() {
 
-    // Add new Task
-    const showModalTask = document.querySelector("#add_new_todo_task_dialog");
+    // Open New Task Modal
+    const newTaskDialog = document.querySelector("#add_new_todo_task_dialog");
     const newTaskBtn = document.querySelector("#add_new_todo_task_btn");
 
     newTaskBtn.addEventListener("click", () => {
-        showModalTask.showModal();
+        newTaskDialog.showModal();
     });
 
-    // Create Task
+    // Close the Modal when clicking outside it.
+    const closeModals = manageModals()
+
+    newTaskDialog.addEventListener("click", e => {
+        closeModals.closeNewTaskModal(e, newTaskDialog);
+    });
+
+    // Create Task and add it to the List Container
     const addNewTaskBtn = document.querySelector("#new_task_create_btn");
-    const globalList = createToDo();
-    const closeDialog = closeNewTaskModal()
+    const createTask = createNewTask();
 
-    addNewTaskBtn.addEventListener("click", e => {
-        console.log(closeDialog);
-        console.log(globalList.toDoList);
+    addNewTaskBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        createTask.addNewTasktoList();
+        newTaskDialog.close()
     });
-
 }
 
 const newTaskDialog = newTaskEventListener();
 
 
 
-    // New Project Section
-// function newProjectEventListener() {
+    // New Project
+function newProjectEventListener() {
 
-//     const showModalProject = document.querySelector("#add_new_project_dialog");
-//     const newProjectBtn = document.querySelector("#add_new_todo_project_btn");
+    // Open New Project Modal
+    const newProjectModal = document.querySelector("#add_new_project_dialog");
+    const newProjectBtn = document.querySelector("#add_new_todo_project_btn");
 
-//     newProjectBtn.addEventListener("click", () => {
-//         showModalProject.showModal();
-//     });
-// }
+    newProjectBtn.addEventListener("click", () => {
+        newProjectModal.showModal();
+    });
 
+    // Close the Modal when clicking outside it.
+    const closeModals = manageModals()
 
+    newProjectModal.addEventListener("click", e => {
+        closeModals.closeNewTaskModal(e, newProjectModal);
+    });
 
+    // Create Project and add it to the List Container
+
+    const addNewProjectBtn = document.querySelector("#new_project_create_btn")
+    const createProject = createNewProject();
+
+    addNewProjectBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        createProject.addNewProjectToList();
+        newProjectModal.close();
+    });
+}
+
+const newProjectDialog = newProjectEventListener();
