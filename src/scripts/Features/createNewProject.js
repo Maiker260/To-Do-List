@@ -1,6 +1,8 @@
 import listsContainer from "./listsContainer";
+import newEventListener from "./newEventListener";
 
-export default function createNewProject() {
+
+function createNewProject() {
 
     const projectListContainer = listsContainer().projectsList;
     const addNewProjectField = document.querySelector("#add_new_project_title")
@@ -28,11 +30,22 @@ export default function createNewProject() {
         console.log(projectListContainer);
     }
 
-    // Clear Current Information from Form
+    // Clear Current Information
     function clearCurrentForm() {
         addNewProjectField.value = "";
     }
 
-
     return { addNewProjectToList }
 }
+
+
+const newProject = createNewProject();
+
+newEventListener(
+    "#add_new_project_dialog",
+    "#add_new_todo_project_btn",
+    "#new_project_create_btn",
+    newProject.addNewProjectToList
+);
+
+export default newProject;
