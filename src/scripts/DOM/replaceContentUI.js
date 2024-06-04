@@ -1,3 +1,5 @@
+import createTaskDOM from "./createTaskDOM";
+
 export default function replaceContent() {
 
     const leftSideNavbarBtns = [
@@ -12,9 +14,10 @@ export default function replaceContent() {
         const button = document.querySelector(btn);
         if (button) {
             button.addEventListener("click", (e) => {
-                console.log(e.target.dataset.name);
-                modifyTitle(e.target.dataset.name);
-                showTasks();
+                const currentBtn = e.target.dataset.name;
+                modifyTitle(currentBtn);
+                clearTasksUIContent();
+                showTasksContent(currentBtn);
             })
         }
     })
@@ -26,9 +29,31 @@ function modifyTitle(name) {
     contentTitle.textContent = name;
 }
 
-
-function showTasks() {
+function clearTasksUIContent() {
     const currentContent = document.querySelector("#main_content_section_task_list_container");
     currentContent.textContent = "";
 
 }
+
+function showTasksContent(btn) {
+    switch (btn) {
+        case "All Tasks":
+            console.log("Showing All Tasks");
+            createTaskDOM(20, "TestNOName", "Jan-11th-1111");
+            break
+        case "Today":
+            console.log("Showing Today Tasks");
+            break
+        case "This Week":
+            console.log("Showing This Week Tasks");
+            break
+        case "Urgent":
+            console.log("Showing Urgent Tasks");
+            createTaskDOM(1, "TestName", "Jun-26th-2024");
+            break
+        case "Completed":
+            console.log("Showing Completed Tasks");
+            break
+    }
+}
+

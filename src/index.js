@@ -1,6 +1,6 @@
 // JS Modules
 import newTask from './scripts/Features/createNewTask';
-// import newProject from './scripts/Features/createNewProject';
+import newProject from './scripts/Features/createNewProject';
 import replaceContent from './scripts/DOM/replaceContentUI';
 
 
@@ -9,10 +9,10 @@ import './style.css';
 
 
 // Function to Create a New Task
-const newTaskElement = newTask();
+const newTaskElement = newTask;
 
 // Function to Create a New Project
-// const newProjectElement = newProject();
+const newProjectElement = newProject;
 
 // Function to Show the Content Selected
 const changeUIContent = replaceContent();
