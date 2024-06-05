@@ -1,7 +1,6 @@
 import createTaskDOM from "./createTaskDOM";
 
 export default function replaceContent() {
-
     const leftSideNavbarBtns = [
         "#left_side_navbar_all_tasks_btn",
         "#left_side_navbar_today_btn",
@@ -21,8 +20,8 @@ export default function replaceContent() {
             })
         }
     })
-
 }
+
 
 function modifyTitle(name) {
     const contentTitle = document.querySelector("#main_content_section_main_title");
@@ -32,7 +31,6 @@ function modifyTitle(name) {
 function clearTasksUIContent() {
     const currentContent = document.querySelector("#main_content_section_task_list_container");
     currentContent.textContent = "";
-
 }
 
 function showTasksContent(btn) {

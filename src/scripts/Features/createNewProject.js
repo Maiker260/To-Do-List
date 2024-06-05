@@ -1,6 +1,6 @@
 import listsContainer from "./listsContainer";
 import newEventListener from "./newEventListener";
-
+import createProjectDOM from "../DOM/createProjectDOM";
 
 function createNewProject() {
 
@@ -25,6 +25,10 @@ function createNewProject() {
 
         // Clear Current Information
         clearCurrentForm();
+
+        // Add Project to the Project DOM List
+        createProjectDOM(1, newProject.name);
+
 
         // BORRRRAAR
         console.log(projectListContainer);
