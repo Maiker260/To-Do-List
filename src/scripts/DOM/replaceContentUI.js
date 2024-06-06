@@ -1,6 +1,5 @@
 import createTaskDOM from "./createTaskDOM";
 import filterTasks from "../Features/filterTasks";
-import listsContainer from "../Features/listsContainer";
 
 export default function replaceContent() {
     const leftSideNavbarBtns = [
@@ -39,7 +38,7 @@ function showTasksContent(btn) {
     switch (btn) {
         case "All Tasks":
             console.log("Showing All Tasks");
-            createTaskDOM(20, "TestNOName", "Jan-11th-1111");
+            filterTasks().allTasks();
             break
         case "Today":
             console.log("Showing Today Tasks");
@@ -49,12 +48,11 @@ function showTasksContent(btn) {
             break
         case "Urgent":
             console.log("Showing Urgent Tasks");
-            createTaskDOM(1, "TestName", "Jun-26th-2024");
-            filterTasks();
-            console.log(listsContainer().tasksList);
+            filterTasks().urgentTasks();
             break
         case "Completed":
             console.log("Showing Completed Tasks");
+            filterTasks().completedTasks();
             break
     }
 }

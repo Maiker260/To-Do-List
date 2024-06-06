@@ -1,21 +1,33 @@
-import listsContainer from "./listsContainer";
+import { tasksList } from "../..";
+import createTaskDOM from "../DOM/createTaskDOM";
 
 export default function filterTasks() {
 
-    const taskList = listsContainer().tasksList;
+    function allTasks() {
+        const allNonCompletedTasks = task => task.completed === false;
 
-    // function urgentTasks() {
+        filterList(tasksList, allNonCompletedTasks).forEach(task => {
+            createTaskDOM(1, task.name, task.dueDate);
+        });
+    }
 
-        const urgentFilter = task => task.priority === "urgent";
+    function urgentTasks() {
+        const urgentFilter = task => task.priority === "urgent" && task.completed === false;
 
-        const urgentList = filterList(taskList, urgentFilter);
+        filterList(tasksList, urgentFilter).forEach(task => {
+            createTaskDOM(1, task.name, task.dueDate);
+        });
+    }
 
-        console.log(taskList);
-        console.log(urgentList);
-    // }
+    function completedTasks() {
+        const completed = task => task.completed === true;
 
-    // return { urgentTasks }
-    return console.log(taskList);
+        filterList(tasksList, completed).forEach(task => {
+            createTaskDOM(1, task.name, task.dueDate);
+        });
+    }
+
+    return { urgentTasks, allTasks, completedTasks }
 
 }
 

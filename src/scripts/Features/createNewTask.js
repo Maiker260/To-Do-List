@@ -1,10 +1,8 @@
-import listsContainer from "./listsContainer";
 import newEventListener from "./newEventListener";
 import createTaskDOM from "../DOM/createTaskDOM";
+import { tasksList } from "../..";
 
-function createNewTask() {
-
-    const taskListContainer = listsContainer().tasksList;
+function createNewTask() {    
 
     class Task {
         constructor(name, description, project, dueDate, priority) {
@@ -37,7 +35,7 @@ function createNewTask() {
         );
 
         // Add New Task to the List
-        taskListContainer.push(newTask);
+        tasksList.push(newTask);
 
         // Add Task to the DOM
         createTaskDOM(2, taskFormElements.name.value, taskFormElements.dueDate.value);
@@ -46,7 +44,7 @@ function createNewTask() {
         clearCurrentForm();
 
         // BORRRRAAR
-        console.log(taskListContainer);
+        console.log(tasksList);
     }
 
     // Clear Current Information from Form

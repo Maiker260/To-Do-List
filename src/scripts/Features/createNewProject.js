@@ -1,10 +1,9 @@
-import listsContainer from "./listsContainer";
 import newEventListener from "./newEventListener";
 import createProjectDOM from "../DOM/createProjectDOM";
+import { projectsList } from "../..";
 
 function createNewProject() {
 
-    const projectListContainer = listsContainer().projectsList;
     const addNewProjectField = document.querySelector("#add_new_project_title")
 
     class Project {
@@ -21,7 +20,7 @@ function createNewProject() {
         )
 
         // Add New Project to the List
-        projectListContainer.push(newProject);
+        projectsList.push(newProject);
 
         // Clear Current Information
         clearCurrentForm();
@@ -31,7 +30,8 @@ function createNewProject() {
 
 
         // BORRRRAAR
-        console.log(projectListContainer);
+        console.log(projectsList);
+
     }
 
     // Clear Current Information

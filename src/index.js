@@ -16,3 +16,7 @@ const newProjectElement = newProject;
 
 // Function to Show the Content Selected
 const changeUIContent = replaceContent();
+
+// Lists Container
+export const tasksList = [];
+export const projectsList = [];
