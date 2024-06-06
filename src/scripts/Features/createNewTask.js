@@ -1,6 +1,6 @@
 import listsContainer from "./listsContainer";
 import newEventListener from "./newEventListener";
-// import manageModals from "./manageModals";
+import createTaskDOM from "../DOM/createTaskDOM";
 
 function createNewTask() {
 
@@ -13,7 +13,7 @@ function createNewTask() {
             this.project = project;
             this.dueDate = dueDate;
             this.priority = priority
-            this.completed = "no";
+            this.completed = false;
         }
     }
 
@@ -38,6 +38,9 @@ function createNewTask() {
 
         // Add New Task to the List
         taskListContainer.push(newTask);
+
+        // Add Task to the DOM
+        createTaskDOM(2, taskFormElements.name.value, taskFormElements.dueDate.value);
 
         // Clear Current Information
         clearCurrentForm();

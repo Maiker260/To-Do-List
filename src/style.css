@@ -328,6 +328,12 @@ dialog::backdrop {
     padding: 0.6em 0;
 }
 
+.main_content_section_task_description_text_content {
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .main_content_section_task_description_right {
     align-items: center;
     gap: 1.5em;

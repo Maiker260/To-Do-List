@@ -45,7 +45,9 @@ export default function createTaskDOM(index, taskName, dueDate) {
         }
     );
     
-    const TaskLabelText = newElement.createElementWithClasses("p");
+    const TaskLabelText = newElement.createElementWithClasses("p", [
+        "main_content_section_task_description_text_content"
+    ]);
     TaskLabelText.textContent = taskName;
     TaskLabel.appendChild(TaskLabelText);
 
