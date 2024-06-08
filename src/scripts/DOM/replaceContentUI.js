@@ -42,6 +42,7 @@ function showTasksContent(btn) {
             break
         case "Today":
             console.log("Showing Today Tasks");
+            filterTasks().todayTask();
             break
         case "This Week":
             console.log("Showing This Week Tasks");

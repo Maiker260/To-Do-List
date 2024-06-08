@@ -1,5 +1,6 @@
 import { tasksList } from "../..";
 import createTaskDOM from "../DOM/createTaskDOM";
+const { isToday } = require("date-fns");
 
 export default function filterTasks() {
 
@@ -9,6 +10,15 @@ export default function filterTasks() {
         filterList(tasksList, allNonCompletedTasks).forEach(task => {
             createTaskDOM(1, task.name, task.dueDate);
         });
+    }
+
+    function todayTask() {
+        const todayFilter = task => convertDate(task.dueDate) === true && task.completed === false;
+
+        filterList(tasksList, todayFilter).forEach(task => {
+            createTaskDOM(1, task.name, task.dueDate);
+        });
+        
     }
 
     function urgentTasks() {
@@ -27,10 +37,19 @@ export default function filterTasks() {
         });
     }
 
-    return { urgentTasks, allTasks, completedTasks }
+    return { urgentTasks, todayTask, allTasks, completedTasks }
 
 }
 
 function filterList(array, criteria) {
     return array.filter(criteria);
+}
+
+function convertDate(date) {
+    // Date will show 1 day before the one requested if "Hyphens" are used, if a "/" is used it works.
+    const validDate = new Date(date.replace(/-/g, '\/'));
+
+    if (isToday(validDate)) {
+        return true;
+    }
 }
