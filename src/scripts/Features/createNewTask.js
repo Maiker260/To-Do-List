@@ -12,6 +12,7 @@ function createNewTask() {
             this.dueDate = dueDate;
             this.priority = priority
             this.completed = false;
+            this.index = 1;
         }
     }
 
@@ -31,7 +32,7 @@ function createNewTask() {
             taskFormElements.description.value,
             taskFormElements.project.value,
             taskFormElements.dueDate.value,
-            taskFormElements.priority.value
+            taskFormElements.priority.value,
         );
 
         // Add New Task to the List
@@ -59,7 +60,6 @@ function createNewTask() {
     return {
         addNewTaskToList
     };
-
 }
 
 const newTask = createNewTask();

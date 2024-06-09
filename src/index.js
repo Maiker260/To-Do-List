@@ -7,16 +7,15 @@ import replaceContent from './scripts/DOM/replaceContentUI';
 // CSS Files
 import './style.css';
 
+// Lists Container
+export const tasksList = [];
+export const projectsList = [];
 
-// Function to Create a New Task
+// Create a New Task
 const newTaskElement = newTask;
 
-// Function to Create a New Project
+// Create a New Project
 const newProjectElement = newProject;
 
 // Function to Show the Content Selected
 const changeUIContent = replaceContent();
-
-// Lists Container
-export const tasksList = [];
-export const projectsList = [];

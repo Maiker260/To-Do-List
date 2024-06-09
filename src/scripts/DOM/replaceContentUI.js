@@ -46,6 +46,7 @@ function showTasksContent(btn) {
             break
         case "This Week":
             console.log("Showing This Week Tasks");
+            filterTasks().thisWeekTask();
             break
         case "Urgent":
             console.log("Showing Urgent Tasks");

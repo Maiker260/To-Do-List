@@ -1,44 +1,36 @@
 import { tasksList } from "../..";
 import createTaskDOM from "../DOM/createTaskDOM";
-const { isToday } = require("date-fns");
+import { isToday, isThisWeek } from "date-fns";
 
 export default function filterTasks() {
 
     function allTasks() {
-        const allNonCompletedTasks = task => task.completed === false;
-
-        filterList(tasksList, allNonCompletedTasks).forEach(task => {
-            createTaskDOM(1, task.name, task.dueDate);
-        });
+        filterAndCreateTasks(task => !task.completed);
     }
 
     function todayTask() {
-        const todayFilter = task => convertDate(task.dueDate) === true && task.completed === false;
+        filterAndCreateTasks(task => isTodayTaskFilter(task.dueDate) && !task.completed);
+    }
 
-        filterList(tasksList, todayFilter).forEach(task => {
-            createTaskDOM(1, task.name, task.dueDate);
-        });
-        
+    function thisWeekTask() {
+        filterAndCreateTasks(task => isThisWeekTaskFilter(task.dueDate) && !task.completed);
     }
 
     function urgentTasks() {
-        const urgentFilter = task => task.priority === "urgent" && task.completed === false;
-
-        filterList(tasksList, urgentFilter).forEach(task => {
-            createTaskDOM(1, task.name, task.dueDate);
-        });
+        filterAndCreateTasks(task => task.priority === "urgent" && !task.completed);
     }
 
     function completedTasks() {
-        const completed = task => task.completed === true;
-
-        filterList(tasksList, completed).forEach(task => {
-            createTaskDOM(1, task.name, task.dueDate);
-        });
+        filterAndCreateTasks(task => task.completed);
     }
 
-    return { urgentTasks, todayTask, allTasks, completedTasks }
+    return { allTasks, todayTask, thisWeekTask, urgentTasks, completedTasks }
+}
 
+function filterAndCreateTasks(filter) {
+    filterList(tasksList, filter).forEach(task => {
+        createTaskDOM(task.index, task.name, task.dueDate);
+    });
 }
 
 function filterList(array, criteria) {
@@ -47,9 +39,14 @@ function filterList(array, criteria) {
 
 function convertDate(date) {
     // Date will show 1 day before the one requested if "Hyphens" are used, if a "/" is used it works.
-    const validDate = new Date(date.replace(/-/g, '\/'));
+    return new Date(date.replace(/-/g, '\/'));
+}
 
-    if (isToday(validDate)) {
-        return true;
-    }
+function isTodayTaskFilter(date) {
+    return isToday(convertDate(date))
+}
+
+function isThisWeekTaskFilter(date) {
+    // Week starts on Monday
+    return isThisWeek(convertDate(date), { weekStartsOn: 1 })
 }
