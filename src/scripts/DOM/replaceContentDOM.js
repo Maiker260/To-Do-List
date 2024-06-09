@@ -1,5 +1,4 @@
-import createTaskDOM from "./createTaskDOM";
-import filterTasks from "../Features/filterTasks";
+import taskSectionSelected from "./taskSectionSelected";
 
 export default function replaceContent() {
     const leftSideNavbarBtns = [
@@ -17,7 +16,7 @@ export default function replaceContent() {
                 const currentBtn = e.target.dataset.name;
                 modifyTitle(currentBtn);
                 clearTasksUIContent();
-                showTasksContent(currentBtn);
+                taskSectionSelected(currentBtn);
             })
         }
     })
@@ -27,35 +26,10 @@ export default function replaceContent() {
 function modifyTitle(name) {
     const contentTitle = document.querySelector("#main_content_section_main_title");
     contentTitle.textContent = name;
+    contentTitle.dataset.title = name;
 }
 
 function clearTasksUIContent() {
     const currentContent = document.querySelector("#main_content_section_task_list_container");
     currentContent.textContent = "";
 }
-
-function showTasksContent(btn) {
-    switch (btn) {
-        case "All Tasks":
-            console.log("Showing All Tasks");
-            filterTasks().allTasks();
-            break
-        case "Today":
-            console.log("Showing Today Tasks");
-            filterTasks().todayTask();
-            break
-        case "This Week":
-            console.log("Showing This Week Tasks");
-            filterTasks().thisWeekTask();
-            break
-        case "Urgent":
-            console.log("Showing Urgent Tasks");
-            filterTasks().urgentTasks();
-            break
-        case "Completed":
-            console.log("Showing Completed Tasks");
-            filterTasks().completedTasks();
-            break
-    }
-}
-

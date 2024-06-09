@@ -1,6 +1,8 @@
 import newEventListener from "./newEventListener";
-import createTaskDOM from "../DOM/createTaskDOM";
+// import createTaskDOM from "../DOM/createTaskDOM";
 import { tasksList } from "../..";
+import reAssignTaskIndex from "./reAssignTaskIndex";
+import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 
 function createNewTask() {    
 
@@ -12,7 +14,7 @@ function createNewTask() {
             this.dueDate = dueDate;
             this.priority = priority
             this.completed = false;
-            this.index = 1;
+            this.index = "";
         }
     }
 
@@ -38,8 +40,11 @@ function createNewTask() {
         // Add New Task to the List
         tasksList.push(newTask);
 
+        // Assign a new Index value, in case that a Task was deleted before.
+        reAssignTaskIndex();
+
         // Add Task to the DOM
-        createTaskDOM(2, taskFormElements.name.value, taskFormElements.dueDate.value);
+        checkCurrentTaskSectionTitle();
 
         // Clear Current Information
         clearCurrentForm();

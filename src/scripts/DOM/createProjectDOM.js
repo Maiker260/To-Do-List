@@ -19,7 +19,7 @@ export default function createProjectDOM(index, name) {
         ]
     );
     newElement.assignAttributes(projectContainer, {
-        id: `project${index}`
+        "data-index": index
         }
     );
 

@@ -1,9 +1,11 @@
 import { tasksList } from "../..";
 import createTaskDOM from "../DOM/createTaskDOM";
 import { isToday, isThisWeek } from "date-fns";
+import reAssignTaskIndex from "./reAssignTaskIndex";
+
 
 export default function filterTasks() {
-
+    // Should show all tasks, non-completed first and then the completed ones, FIX IT!
     function allTasks() {
         filterAndCreateTasks(task => !task.completed);
     }
@@ -27,7 +29,9 @@ export default function filterTasks() {
     return { allTasks, todayTask, thisWeekTask, urgentTasks, completedTasks }
 }
 
+
 function filterAndCreateTasks(filter) {
+    reAssignTaskIndex();
     filterList(tasksList, filter).forEach(task => {
         createTaskDOM(task.index, task.name, task.dueDate);
     });

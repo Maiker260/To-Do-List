@@ -9,6 +9,7 @@ function createNewProject() {
     class Project {
         constructor (name) {
             this.name = name;
+            this.index = 1;
         }
     }
     

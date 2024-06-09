@@ -12,6 +12,9 @@ export default function createTaskDOM(index, taskName, dueDate) {
         "current_option"
         ]
     )
+    newElement.assignAttributes(TaskContainer, {
+        "data-index": index
+    })
 
     // New Task Left Section
     const TaskDivContainerLeftSection = newElement.createElementWithClasses("div", [ 
