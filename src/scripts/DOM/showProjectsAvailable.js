@@ -11,7 +11,7 @@ export default function showProjectsAvailable() {
 function createOption() {
 
     // Clear All Options from the List
-    clearSelectOptions();
+    // clearSelectOptions();
 
     const newTaskProjectList = document.querySelector("#new_task_project");
 

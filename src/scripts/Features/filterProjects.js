@@ -1,13 +1,13 @@
-import { projectsList, tasksList } from "../..";
+import { tasksList } from "../..";
+import reAssignIndex from "./reAssignIndex";
 
 export default function filterProjects(project) {
+    console.log("filter project FN")
     switch (project) {
         case project:
             filterAndCreateProject(task => task.project == project);          
         break
     }
-
-
 }
 
 function filterAndCreateProject(filter) {

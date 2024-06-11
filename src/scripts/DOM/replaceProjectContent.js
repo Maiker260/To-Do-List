@@ -10,6 +10,7 @@ export default function replaceProjectContent() {
             const currentProject = e.target.dataset.name;
             changeCurrentTitle(currentProject);
             clearMainSectionContent();
+            filterProjects(currentProject);
         }
     });
 }
