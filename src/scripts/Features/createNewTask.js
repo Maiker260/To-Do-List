@@ -1,8 +1,8 @@
 import newEventListener from "./newEventListener";
-// import createTaskDOM from "../DOM/createTaskDOM";
 import { tasksList } from "../..";
-import reAssignTaskIndex from "./reAssignTaskIndex";
+import reAssignIndex from "./reAssignIndex";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
+import clearMainSectionContent from "../DOM/clearMainSectionContent";
 
 function createNewTask() {    
 
@@ -41,7 +41,10 @@ function createNewTask() {
         tasksList.push(newTask);
 
         // Assign a new Index value, in case that a Task was deleted before.
-        reAssignTaskIndex();
+        reAssignIndex(tasksList);
+
+        // Clear DOM Current Content
+        clearMainSectionContent();
 
         // Add Task to the DOM
         checkCurrentTaskSectionTitle();

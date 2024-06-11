@@ -1,0 +1,15 @@
+import clearMainSectionContent from "./clearMainSectionContent";
+import changeCurrentTitle from "./changeCurrentTitle";
+import filterProjects from "../Features/filterProjects";
+
+export default function replaceProjectContent() {
+
+    const projectListSection = document.querySelector("#left_side_navbar_second_project_list");
+    projectListSection.addEventListener("click", e => {
+        if (e.target.dataset.name !== undefined) {
+            const currentProject = e.target.dataset.name;
+            changeCurrentTitle(currentProject);
+            clearMainSectionContent();
+        }
+    });
+}

@@ -1,7 +1,7 @@
 import { tasksList } from "../..";
 import createTaskDOM from "../DOM/createTaskDOM";
 import { isToday, isThisWeek } from "date-fns";
-import reAssignTaskIndex from "./reAssignTaskIndex";
+import reAssignIndex from "./reAssignIndex";
 
 
 export default function filterTasks() {
@@ -31,7 +31,7 @@ export default function filterTasks() {
 
 
 function filterAndCreateTasks(filter) {
-    reAssignTaskIndex();
+    reAssignIndex(tasksList);
     filterList(tasksList, filter).forEach(task => {
         createTaskDOM(task.index, task.name, task.dueDate);
     });

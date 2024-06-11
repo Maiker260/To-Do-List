@@ -95,9 +95,7 @@ export default function createTaskDOM(index, taskName, dueDate) {
     TaskContainer.appendChild(TaskDivContainerLeftSection);
     TaskContainer.appendChild(TaskDivContainerRightSection);
 
-    // return { TaskContainer } ;
-
-    // BOOOORRRAR
+    // Append Task to the DOM
     const listContainer = document.querySelector("#main_content_section_task_list_container");
     listContainer.appendChild(TaskContainer);
 }

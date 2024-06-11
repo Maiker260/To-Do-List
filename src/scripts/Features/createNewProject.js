@@ -1,6 +1,8 @@
 import newEventListener from "./newEventListener";
 import createProjectDOM from "../DOM/createProjectDOM";
 import { projectsList } from "../..";
+import clearMainSectionContent from "../DOM/clearMainSectionContent";
+import reAssignIndex from "./reAssignIndex";
 
 function createNewProject() {
 
@@ -9,7 +11,7 @@ function createNewProject() {
     class Project {
         constructor (name) {
             this.name = name;
-            this.index = 1;
+            this.index = "";
         }
     }
     
@@ -23,11 +25,20 @@ function createNewProject() {
         // Add New Project to the List
         projectsList.push(newProject);
 
+        // Assign a new Index value, in case that a Project was deleted before.
+        reAssignIndex(projectsList);
+
+        // Clear DOM Current Content
+        clearMainSectionContent();
+
+        // Add Task to the DOM
+        // checkCurrentTaskSectionTitle();
+
         // Clear Current Information
         clearCurrentForm();
 
         // Add Project to the Project DOM List
-        createProjectDOM(1, newProject.name);
+        createProjectDOM(newProject.index, newProject.name);
 
 
         // BORRRRAAR

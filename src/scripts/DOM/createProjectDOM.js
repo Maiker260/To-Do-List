@@ -1,5 +1,6 @@
 import createIcons from "./createIcons";
 import createElementDOM from "./createElementDOM";
+import { id } from "date-fns/locale";
 
 export default function createProjectDOM(index, name) {
 
@@ -19,7 +20,9 @@ export default function createProjectDOM(index, name) {
         ]
     );
     newElement.assignAttributes(projectContainer, {
-        "data-index": index
+        id: name + index,
+        "data-index": index,
+        "data-name": name + index
         }
     );
 
@@ -30,12 +33,20 @@ export default function createProjectDOM(index, name) {
         ]
     );
     projectTitle.textContent = name;
+    newElement.assignAttributes(projectTitle, {
+        "data-name": name + index
+        }        
+    );
 
         // Icons Container
     const iconsContainer = newElement.createElementWithClasses("div", [
         "left_side_navbar_second_list_icons_container",
         "flex"
         ]
+    );
+    newElement.assignAttributes(iconsContainer, {
+        "data-name": name + index
+        }        
     );
 
             // Append Icons to Container

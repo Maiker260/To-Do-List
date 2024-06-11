@@ -1,6 +1,8 @@
 import taskSectionSelected from "./taskSectionSelected";
+import clearMainSectionContent from "./clearMainSectionContent";
+import changeCurrentTitle from "./changeCurrentTitle";
 
-export default function replaceContent() {
+export default function replaceTasksContent() {
     const leftSideNavbarBtns = [
         "#left_side_navbar_all_tasks_btn",
         "#left_side_navbar_today_btn",
@@ -14,22 +16,10 @@ export default function replaceContent() {
         if (button) {
             button.addEventListener("click", (e) => {
                 const currentBtn = e.target.dataset.name;
-                modifyTitle(currentBtn);
-                clearTasksUIContent();
+                changeCurrentTitle(currentBtn);
+                clearMainSectionContent();
                 taskSectionSelected(currentBtn);
             })
         }
     })
-}
-
-
-function modifyTitle(name) {
-    const contentTitle = document.querySelector("#main_content_section_main_title");
-    contentTitle.textContent = name;
-    contentTitle.dataset.title = name;
-}
-
-function clearTasksUIContent() {
-    const currentContent = document.querySelector("#main_content_section_task_list_container");
-    currentContent.textContent = "";
 }
