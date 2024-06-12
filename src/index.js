@@ -4,7 +4,7 @@ import newProject from './scripts/Features/createNewProject';
 import replaceTasksContent from './scripts/DOM/replaceTasksContent';
 import replaceProjectContent from './scripts/DOM/replaceProjectContent';
 import webpageLoads from './scripts/DOM/DOMLoads';
-import showProjectsAvailable from './scripts/DOM/showProjectsAvailable';
+import handleProjectBtns from './scripts/DOM/handleProjectBtns';
 
 // CSS Files
 import './style.css';
@@ -16,16 +16,15 @@ export const projectsList = [];
 
 // Create a New Task
 const newTaskElement = newTask;
-// Show Projects Available in the Project List
-const newTaskProjectBtn = showProjectsAvailable();
 
 // Create a New Project
 const newProjectElement = newProject;
 
-// Function to Show the Content Selected
-const changeTasksDOMContent = replaceTasksContent();
+// Handle Project Buttons
+const projectBtns = handleProjectBtns()
 
 // Function to Show the Content Selected
+const changeTasksDOMContent = replaceTasksContent();
 const changeProjectDOMContent = replaceProjectContent();
 
 // Show All Tasks in the Array when the Webpage loads

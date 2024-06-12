@@ -152,13 +152,13 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-.add_new_dialog{
+.add_new_edit_dialog{
     padding: 0;
     border: none;
     border-radius: calc(5px * 3.74);
 }
 
-.add_new_dialog_container {
+.add_new_edit_dialog_container {
     flex-direction: column;
     border-radius: calc(5px * 3.74);
     box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -168,33 +168,33 @@ dialog::backdrop {
     color: var(--navbar_titles);
 }
 
-.add_new_dialog_main_title_container {
+.add_new_edit_dialog_main_title_container {
     color: var(--white);
     background: var(--main_color);
     padding: 0.7em;
     text-align: center;
 }
 
-            /* Modal to Add a New Task */
+            /* Modal to Add/Edit a New Task */
 
-.add_new_todo_task_dialog_input_area {
+.add_new_edit_todo_task_dialog_input_area {
     padding: 1em 2em;
     grid-template-columns: 1fr; 
     grid-template-rows: repeat(6, 1fr); 
     gap: 0px 0px;
 }
 
-.add_new_todo_task_input_label_container {
+.add_new_edit_todo_task_input_label_container {
     align-items: center;
     margin-bottom: 0.5em;
 }
 
-.add_new_todo_task_input_label {
+.add_new_edit_todo_task_input_label {
     width: 100%;
     font-size: 1.3rem;
 }
 
-.add_new_todo_task_input {
+.add_new_edit_todo_task_input {
     font-size: 1rem;
     width: 100%;
     height: 70%;
@@ -203,15 +203,15 @@ dialog::backdrop {
     border: none;
 }
 
-.add_new_todo_task_input_due_date {
+.add_new_edit_todo_task_input_due_date {
     padding-left: 0.9em;
 }
 
-.add_new_todo_task_input_project, .add_new_todo_task_input_priority {
+.add_new_edit_todo_task_input_project, .add_new_edit_todo_task_input_priority {
     padding-left: 0.8em;
 }
 
-.new_create_btn {
+.new_edit_create_btn {
     font-size: 1rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -245,7 +245,7 @@ dialog::backdrop {
 
             /* Modal to Add a New Project */
 
-.add_new_project_content_container {
+.add_new_edit_project_content_container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -254,17 +254,17 @@ dialog::backdrop {
     padding: 0.5em 0 1em 0;
 }
 
-.add_new_project_content {
+.add_new_edit_project_content {
     justify-self: center;
     padding: 1em 0;
 }
 
-.add_new_project_title_container {
+.add_new_edit_project_title_container {
     gap: 1em;
     align-items: center;
 }
 
-.add_new_project_title {
+.add_new_edit_project_title {
     font-size: 1rem;
     height: 3em;
     max-width: 11em;

@@ -22,43 +22,43 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
             </header>
-            <dialog id="add_new_todo_task_dialog" class="add_new_todo_task_dialog add_new_dialog">
-                <div class="add_new_todo_task_dialog_container add_new_dialog_container flex">
-                    <div class="add_new_todo_task_dialog_main_title_container add_new_dialog_main_title_container">
-                        <h2 class="add_new_todo_task_dialog_main_title">Add a New Task</h2>
+            <dialog id="add_new_todo_task_dialog" class="add_new_edit_todo_task_dialog add_new_edit_dialog">
+                <div class="add_new_edit_todo_task_dialog_container add_new_edit_dialog_container flex">
+                    <div class="add_new_edit_todo_task_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                        <h2 class="add_new_edit_todo_task_dialog_main_title">Add a New Task</h2>
                     </div>
-                    <form action="dialog" class="add_new_todo_task_dialog_input_area grid">
-                        <label for="new_task_name" id="new_task_name_input" class="add_new_todo_task_input_label_container new_task_name_input flex">
-                            <h3 class="add_new_todo_task_input_label">Task:</h3>
-                            <input class="add_new_todo_task_input" type="text" name="new_task_name" id="new_task_name" placeholder="Task's Name" required>
+                    <form action="dialog" class="add_new_edit_todo_task_dialog_input_area grid">
+                        <label for="new_task_name" id="new_task_name_input" class="add_new_edit_todo_task_input_label_container new_edit_task_name_input flex">
+                            <h3 class="add_new_edit_todo_task_input_label">Task:</h3>
+                            <input class="add_new_edit_todo_task_input" type="text" name="new_task_name" id="new_task_name" placeholder="Task's Name" required>
                         </label>
-                        <label for="new_task_description" id="new_task_description_input" class="add_new_todo_task_input_label_container new_task_description_input flex">
-                            <h3 class="add_new_todo_task_input_label">Description:</h3>
-                            <input class="add_new_todo_task_input" type="text" name="new_task_description" id="new_task_description" placeholder="Description" required>
+                        <label for="new_task_description" id="new_task_description_input" class="add_new_edit_todo_task_input_label_container new_edit_task_description_input flex">
+                            <h3 class="add_new_edit_todo_task_input_label">Description:</h3>
+                            <input class="add_new_edit_todo_task_input" type="text" name="new_task_description" id="new_task_description" placeholder="Description" required>
                         </label>
-                        <label for="new_task_project" id="new_task_project_input" class="add_new_todo_task_input_label_container new_task_project_input flex">
-                            <h3 class="add_new_todo_task_input_label">Project:</h3>
-                            <select class="add_new_todo_task_input add_new_todo_task_input_project" name="new_task_project" id="new_task_project" required>
+                        <label for="new_task_project" id="new_task_project_input" class="add_new_edit_todo_task_input_label_container new_edit_task_project_input flex">
+                            <h3 class="add_new_edit_todo_task_input_label">Project:</h3>
+                            <select class="add_new_edit_todo_task_input add_new_edit_todo_task_input_project" name="new_task_project" id="new_task_project" required>
                                 <option value="default" selected disabled>Select a Project</option>
                                 <option value="project1">Project1</option>
                                 <option value="project2">Project2</option>
                                 <option value="project3">Project3</option>
                             </select>
                         </label>
-                        <label for="new_task_due_date" id="new_task_due_date_input" class="add_new_todo_task_input_label_container new_task_due_date_input flex">
-                            <h3 class="add_new_todo_task_input_label">Due Date:</h3>
-                            <input class="add_new_todo_task_input add_new_todo_task_input_due_date" type="date" name="new_task_due_date" id="new_task_due_date" required>
+                        <label for="new_task_due_date" id="new_task_due_date_input" class="add_new_edit_todo_task_input_label_container new_edit_task_due_date_input flex">
+                            <h3 class="add_new_edit_todo_task_input_label">Due Date:</h3>
+                            <input class="add_new_edit_todo_task_input add_new_edit_todo_task_input_due_date" type="date" name="new_task_due_date" id="new_task_due_date" required>
                         </label>
-                        <label for="new_task_priority" id="new_task_priority_input" class="add_new_todo_task_input_label_container new_task_priority_input flex">
-                            <h3 class="add_new_todo_task_input_label">Priority:</h3>
-                            <select class="add_new_todo_task_input add_new_todo_task_input_priority" name="new_task_priority" id="new_task_priority" required>
+                        <label for="new_task_priority" id="new_task_priority_input" class="add_new_edit_todo_task_input_label_container new_edit_task_priority_input flex">
+                            <h3 class="add_new_edit_todo_task_input_label">Priority:</h3>
+                            <select class="add_new_edit_todo_task_input add_new_edit_todo_task_input_priority" name="new_task_priority" id="new_task_priority" required>
                                 <option value="default" selected disabled>Select a Priority</option>
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="urgent">Urgent</option>
                             </select>
                         </label>
-                        <button id="new_task_create_btn" class="new_task_create_btn new_create_btn pointer">Create Task</button>
+                        <button id="new_task_create_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Create Task</button>
                     </form>
                 </div>
             </dialog>
@@ -101,24 +101,40 @@
                 <svg id="add_new_todo_project_btn" class="interactive_icons left_side_navbar_second_list_main_title_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
-                <dialog id="add_new_project_dialog" class="add_new_project_dialog add_new_dialog">
-                    <div class="add_new_project_dialog_container add_new_dialog_container">
-                        <div class="add_new_project_dialog_main_title_container add_new_dialog_main_title_container">
-                            <h2 class="add_new_project_dialog_main_title">Add a Project</h2>
+                <dialog id="add_new_project_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
+                    <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
+                        <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                            <h2 class="add_new_edit_project_dialog_main_title">Add a Project</h2>
                         </div>
-                        <div class="add_new_project_content_container grid">
-                            <div class="add_new_project_content">
-                                <label for="add_new_project_title" class="add_new_project_title_container flex">
+                        <div class="add_new_edit_project_content_container grid">
+                            <div class="add_new_edit_project_content">
+                                <label for="add_new_edit_project_title" class="add_new_edit_project_title_container flex">
                                     <h3>Project Name:</h3>
-                                    <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_project_title" placeholder="Name">
+                                    <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_edit_project_title" placeholder="Name">
                                 </label>
                             </div>
-                            <button id="new_project_create_btn" class="new_project_create_btn new_create_btn pointer">Create Project</button>
+                            <button id="new_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Create Project</button>
                         </div>
                     </div>
                 </dialog>
             </header>
             <ul id="left_side_navbar_second_project_list" class="left_side_navbar_second_list flex">
+                <dialog id="edit_project_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
+                    <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
+                        <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                            <h2 class="add_new_edit_project_dialog_main_title">Edit Project</h2>
+                        </div>
+                        <div class="add_new_edit_project_content_container grid">
+                            <div class="add_new_edit_project_content">
+                                <label for="edit_project_title" class="add_new_edit_project_title_container flex">
+                                    <h3 id="edit_project_name">Project Name:</h3>
+                                    <input type="text" name="edit_project_title" id="edit_project_title" class="add_new_edit_project_title" placeholder="Name">
+                                </label>
+                            </div>
+                            <button id="edit_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Edit Project</button>
+                        </div>
+                    </div>
+                </dialog>
                 <li id="dom_content_load_test" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex current_option">
                     <p class="left_side_navbar_task_title pointer">New Project</p>
                     <div class="left_side_navbar_second_list_icons_container flex">
@@ -133,7 +149,7 @@
                 <li id="second_navbar_anotherNewproject" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex current_option">
                     <p class="left_side_navbar_task_title pointer">Another New Project again and again</p>
                     <div class="left_side_navbar_second_list_icons_container flex">
-                        <svg class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <svg id="editBtn_asdfsadfs_0" class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
                         </svg>
                         <svg class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

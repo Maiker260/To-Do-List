@@ -1,6 +1,5 @@
 import createIcons from "./createIcons";
 import createElementDOM from "./createElementDOM";
-import { id } from "date-fns/locale";
 
 export default function createProjectDOM(index, name) {
 
@@ -20,9 +19,10 @@ export default function createProjectDOM(index, name) {
         ]
     );
     newElement.assignAttributes(projectContainer, {
-        id: name + index,
+        id: name + "-" + index,
         "data-index": index,
-        "data-name": name + index
+        "data-name": name + "-" + index,
+        "data-title": name
         }
     );
 
@@ -34,7 +34,8 @@ export default function createProjectDOM(index, name) {
     );
     projectTitle.textContent = name;
     newElement.assignAttributes(projectTitle, {
-        "data-name": name + index
+        "data-name": name + "-" + index,
+        "data-title": name
         }        
     );
 
@@ -45,12 +46,21 @@ export default function createProjectDOM(index, name) {
         ]
     );
     newElement.assignAttributes(iconsContainer, {
-        "data-name": name + index
+        "data-name": name + "-" + index,
+        "data-title": name
         }        
     );
 
             // Append Icons to Container
     const icons = createIcons();
+    newElement.assignAttributes(icons.editSvg, {
+        id: "editBtn" + "_" + name + "_" + index,
+        "data-icon": "edit"
+    });
+    newElement.assignAttributes(icons.deleteSvg, {
+        id: "deleteBtn" + "_" + name + "_" + index,
+        "data-icon": "delete"
+    });
     iconsContainer.appendChild(icons.editSvg);
     iconsContainer.appendChild(icons.deleteSvg);
 

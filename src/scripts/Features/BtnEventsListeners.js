@@ -1,6 +1,7 @@
 import manageModals from "./manageModals";
+import showProjectsAvailable from "../DOM/showProjectsAvailable";
 
-export default function newEventListener(modalSelector, btnSelector, createBtnSelector, createFunction) {
+export default function BtnEventsListeners(modalSelector, btnSelector, createEditBtnSelector, createEditFunction) {
 
     const modal = document.querySelector(modalSelector);
     const openBtn = document.querySelector(btnSelector);
@@ -8,6 +9,7 @@ export default function newEventListener(modalSelector, btnSelector, createBtnSe
     // Open Modal
     openBtn.addEventListener("click", () => {
         modal.showModal();
+        showProjectsAvailable();
     });
 
     // Close the Modal when clicking outside it.
@@ -17,14 +19,13 @@ export default function newEventListener(modalSelector, btnSelector, createBtnSe
         closeModals.closeNewTaskModal(e, modal);
     });
 
-    // Create Element and add it to the List Container
+    // Create/Edit Element and add it to the List Container
 
-    const addNewBtn = document.querySelector(createBtnSelector);
+    const addNewEditBtn = document.querySelector(createEditBtnSelector);
 
-    addNewBtn.addEventListener("click", (e) => {
+    addNewEditBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        createFunction();
+        createEditFunction();
         modal.close();
     });
-
 }

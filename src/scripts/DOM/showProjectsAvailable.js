@@ -1,29 +1,26 @@
 import { projectsList } from "../..";
+import createElementDOM from "./createElementDOM";
 
+// Shows Projects available in the "Project" Dropdown menu in the New Task Section.
 export default function showProjectsAvailable() {
 
-    const newTaskProjectBtn = document.querySelector("#new_task_project");
-
-    newTaskProjectBtn.addEventListener("click", createOption());
-    // newTaskProjectBtn.addEventListener("click", console.log("HOLA"));
-}
-
-function createOption() {
-
     // Clear All Options from the List
-    // clearSelectOptions();
+    clearSelectOptions();
 
     const newTaskProjectList = document.querySelector("#new_task_project");
+    const newElement = createElementDOM();
 
-    const defaultOption = document.createElement("option");
+    const defaultOption = newElement.createElementWithClasses("option");
     defaultOption.value = "default"
-    defaultOption.setAttribute("selected", true);
-    defaultOption.setAttribute("disabled", true);
+    newElement.assignAttributes(defaultOption, {
+        selected: true,
+        disabled: true
+    });
     defaultOption.textContent = "Select a Project";
     newTaskProjectList.appendChild(defaultOption)
 
     projectsList.forEach(project => {
-        const projectName = document.createElement("option");
+        const projectName = newElement.createElementWithClasses("option");
         projectName.value = project.name;
         projectName.textContent = project.name;
         newTaskProjectList.appendChild(projectName)
@@ -31,7 +28,6 @@ function createOption() {
 }
 
 function clearSelectOptions() {
-    const newTaskProjectList = document.querySelector("#new_task_project");
-
+    const newTaskProjectList = document.querySelector("#new_task_project")
     newTaskProjectList.textContent = "";
 }

@@ -1,4 +1,4 @@
-import newEventListener from "./newEventListener";
+import BtnEventsListeners from "./BtnEventsListeners";
 import { tasksList } from "../..";
 import reAssignIndex from "./reAssignIndex";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
@@ -51,9 +51,6 @@ function createNewTask() {
 
         // Clear Current Information
         clearCurrentForm();
-
-        // BORRRRAAR
-        console.log(tasksList);
     }
 
     // Clear Current Information from Form
@@ -72,7 +69,7 @@ function createNewTask() {
 
 const newTask = createNewTask();
 
-newEventListener(
+BtnEventsListeners(
     "#add_new_todo_task_dialog", 
     "#add_new_todo_task_btn", 
     "#new_task_create_btn",

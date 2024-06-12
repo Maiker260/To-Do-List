@@ -1,13 +1,9 @@
 import { tasksList } from "../..";
 import reAssignIndex from "./reAssignIndex";
+import createTaskDOM from "../DOM/createTaskDOM";
 
 export default function filterProjects(project) {
-    console.log("filter project FN")
-    switch (project) {
-        case project:
-            filterAndCreateProject(task => task.project == project);          
-        break
-    }
+    filterAndCreateProject(task => task.project == project);
 }
 
 function filterAndCreateProject(filter) {

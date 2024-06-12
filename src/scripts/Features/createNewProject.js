@@ -1,8 +1,9 @@
-import newEventListener from "./newEventListener";
+import BtnEventsListeners from "./BtnEventsListeners";
 import createProjectDOM from "../DOM/createProjectDOM";
 import { projectsList } from "../..";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
 import reAssignIndex from "./reAssignIndex";
+import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 
 function createNewProject() {
 
@@ -32,18 +33,13 @@ function createNewProject() {
         clearMainSectionContent();
 
         // Add Task to the DOM
-        // checkCurrentTaskSectionTitle();
+        checkCurrentTaskSectionTitle();
 
         // Clear Current Information
         clearCurrentForm();
 
         // Add Project to the Project DOM List
         createProjectDOM(newProject.index, newProject.name);
-
-
-        // BORRRRAAR
-        console.log(projectsList);
-
     }
 
     // Clear Current Information
@@ -57,7 +53,7 @@ function createNewProject() {
 
 const newProject = createNewProject();
 
-newEventListener(
+BtnEventsListeners(
     "#add_new_project_dialog",
     "#add_new_todo_project_btn",
     "#new_project_create_btn",

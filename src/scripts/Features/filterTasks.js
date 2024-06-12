@@ -3,7 +3,6 @@ import createTaskDOM from "../DOM/createTaskDOM";
 import { isToday, isThisWeek } from "date-fns";
 import reAssignIndex from "./reAssignIndex";
 
-
 export default function filterTasks() {
     // Should show all tasks, non-completed first and then the completed ones, FIX IT!
     function allTasks() {
