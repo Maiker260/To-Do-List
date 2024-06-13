@@ -8,6 +8,7 @@
     --navbar_titles: #696969;
     --main_content_titles: #616161;
     --main_content_border: #e2e2e2;
+    --placeholders: rgb(163, 163, 163);
 }
 
 * {
@@ -203,6 +204,10 @@ dialog::backdrop {
     border: none;
 }
 
+.add_new_edit_todo_task_input::placeholder {
+    color: var(--placeholders);
+}
+
 .add_new_edit_todo_task_input_due_date {
     padding-left: 0.9em;
 }
@@ -271,6 +276,10 @@ dialog::backdrop {
     color: var(--navbar_titles);
     padding-left: 1em;
     border: none;
+}
+
+.add_new_edit_project_title::placeholder {
+    color: var(--placeholders);
 }
 
 /* Main Content Section */

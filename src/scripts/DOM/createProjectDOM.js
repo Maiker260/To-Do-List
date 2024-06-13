@@ -52,17 +52,28 @@ export default function createProjectDOM(index, name) {
     );
 
             // Append Icons to Container
-    const icons = createIcons();
-    newElement.assignAttributes(icons.editSvg, {
-        id: "editBtn" + "_" + name + "_" + index,
-        "data-icon": "edit"
+    const editBtnID = "editBtn" + "_" + name + "_" + index;
+    const editDataIcon = "edit";
+    const deleteBtnID = "deleteBtn" + "_" + name + "_" + index;
+    const delDataIcon = "delete";
+
+    const editIcons = createIcons(editBtnID, editDataIcon, index, name);
+    const delIcons = createIcons(deleteBtnID, delDataIcon, index, name);
+
+    newElement.assignAttributes(editIcons.editSvg, {
+        id: editBtnID,
+        "data-icon": editDataIcon,
+        "data-index": index,
+        "data-name": name
     });
-    newElement.assignAttributes(icons.deleteSvg, {
-        id: "deleteBtn" + "_" + name + "_" + index,
-        "data-icon": "delete"
+    newElement.assignAttributes(delIcons.deleteSvg, {
+        id: deleteBtnID,
+        "data-icon": delDataIcon,
+        "data-index": index,
+        "data-name": name
     });
-    iconsContainer.appendChild(icons.editSvg);
-    iconsContainer.appendChild(icons.deleteSvg);
+    iconsContainer.appendChild(editIcons.editSvg);
+    iconsContainer.appendChild(delIcons.deleteSvg);
 
             // Append Project Content to Project Container
     projectContainer.appendChild(projectTitle);
