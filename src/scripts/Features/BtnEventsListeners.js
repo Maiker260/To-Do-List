@@ -23,9 +23,13 @@ export default function BtnEventsListeners(modalSelector, btnSelector, createEdi
 
     const addNewEditBtn = document.querySelector(createEditBtnSelector);
 
-    addNewEditBtn.addEventListener("click", (e) => {
+    addNewEditBtn.removeEventListener("click", createEditFunction);
+    console.log("removeEventListener");
+    addNewEditBtn.addEventListener("click", function handleClick(e) {
         e.preventDefault();
         createEditFunction();
         modal.close();
     });
+    console.log("Added new event listener");
+    
 }

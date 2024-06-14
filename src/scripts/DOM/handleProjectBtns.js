@@ -2,49 +2,67 @@ import BtnEventsListeners from "../Features/BtnEventsListeners";
 import { projectsList } from "../..";
 import reAssignIndex from "../Features/reAssignIndex";
 import createProjectDOM from "./createProjectDOM";
+import clearMainSectionContent from "./clearMainSectionContent";
+import changeCurrentTitle from "./changeCurrentTitle";
+import filterProjects from "../Features/filterProjects";
 
-export default function handleProjectBtns() {
-
+export default function handleProjectActions() {
     const projectListSection = document.querySelector("#left_side_navbar_second_project_list");
-    projectListSection.addEventListener("click", e => {
 
-        const btnID = e.target.id;
-        const btnType = e.target.dataset.icon;
-        const btnIndex = e.target.dataset.index;
-        const projectName = e.target.dataset.name;
+    projectListSection.addEventListener("click", handleProjectClick);
 
-        if (btnID !== undefined && btnType == "edit") {
-            BtnEventsListeners(
-                "#edit_project_dialog",
-                "#" + btnID,
-                "#edit_project_create_btn",
-                editBtn(btnIndex, projectName)
-            );
-        } else if (btnID !== undefined && btnType == "delete") {
-            BtnEventsListeners(
-                "#edit_project_dialog",
-                "#" + btnID,
-                "#edit_project_create_btn",
-                delBtn(btnIndex, projectName)
-            );
+    function handleProjectClick(e) {
+        const target = e.target;
+
+        // Handle edit and delete actions
+        if (target && target.dataset.icon) {
+            const btnType = target.dataset.icon;
+            const btnIndex = target.dataset.index;
+            const projectName = target.dataset.name;
+
+
+            // NEED TO IDENTIFY WHY THE EVENT LISTENERS ARE BEING ADDED MULTIPLE TIMES
+            if (btnType === "edit") {
+                EditModalInfo(projectName);
+                BtnEventsListeners(
+                    "#edit_project_dialog",
+                    "#" + target.id,
+                    "#edit_project_create_btn",
+                    () => editBtn(btnIndex, projectName)
+                );
+            } else if (btnType === "delete") {
+                DeleteModalInfo(projectName);
+                BtnEventsListeners(
+                    "#edit_project_dialog",
+                    "#" + target.id,
+                    "#edit_project_create_btn",
+                    () => delBtn(btnIndex, projectName)
+                );
+            }
         }
-    })
 
-    
+        // Handle project switching
+        if (target.dataset.name !== undefined && target.dataset.title !== undefined) {
+            const currentProject = target.dataset.title;
+            changeCurrentTitle(currentProject);
+            clearMainSectionContent();
+            filterProjects(currentProject);
+        }
+    }
 }
 
+
 function editBtn(index, name) {
-    // EditModalInfo(name)
     // findProject(index)
 }
 
 
 function delBtn(index, name) {
-    DeleteModalInfo(name);
     
     const projectNameConfirm = document.querySelector("#edit_project_title")
-    if (name == projectNameConfirm.value) {
-        deleteProject(findProject(index));
+    if (name === projectNameConfirm.value) {
+        console.log("Index:" + index);
+        // deleteProject(findProject(index));
     } else {
         console.log("Wrong Project Name");
     }
@@ -54,12 +72,16 @@ function findProject(pIndex) {
     return projectsList.findIndex(project => project.index === pIndex);
 }
 
-function deleteProject(project) {
-    projectsList.splice(project);
+function deleteProject(projectIndex) {
+    // console.log("Index:" + projectIndex);
+    projectsList.splice(projectIndex, 1);
     reAssignIndex(projectsList);
-    for (project in projectsList) {
-        createProjectDOM(project.index, project.name)
-    }
+    // Clear existing projectss
+    clearMainSectionContent();
+    clearModalValues();
+    projectsList.forEach(project => {
+        createProjectDOM(project.index, project.name);
+    });
 }
 
 
@@ -86,4 +108,9 @@ function EditModalInfo(project) {
     EditProjectName.textContent = "Edit the Project Name: ";
     inputPlaceHolder.placeholder = project;
     confirmEditButton.textContent = "Edit Project";
+}
+
+function clearModalValues() {
+    const inputValue = document.querySelector("#edit_project_title");
+    inputValue.textContent = "";
 }
