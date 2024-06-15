@@ -1,70 +1,62 @@
-import BtnEventsListeners from "../Features/BtnEventsListeners";
 import { projectsList } from "../..";
 import reAssignIndex from "../Features/reAssignIndex";
 import createProjectDOM from "./createProjectDOM";
 import clearMainSectionContent from "./clearMainSectionContent";
 import changeCurrentTitle from "./changeCurrentTitle";
 import filterProjects from "../Features/filterProjects";
+import manageProjectBtns from "../Features/manageProjecBtns";
+import handleProjectModals from "./handleProjectModals";
+import clickingOutsideModals from "../Features/clickingOutsideModals";
 
-export default function handleProjectActions() {
+document.addEventListener("DOMContentLoaded", function() {
     const projectListSection = document.querySelector("#left_side_navbar_second_project_list");
 
-    projectListSection.addEventListener("click", handleProjectClick);
+    projectListSection.addEventListener("click", e => {
+        manageProjectBtns(e);
+    });
+});
 
-    function handleProjectClick(e) {
-        const target = e.target;
+// Apply the action and close the modal when the Edit/Delete Button is pressed or user clicked outside dialog
+document.querySelector("#edit_project_create_btn").addEventListener("click", (e) => {
+    const modal = document.querySelector("#edit_project_dialog");
+    const projectModalHandler = handleProjectModals();
 
-        // Handle edit and delete actions
-        if (target && target.dataset.icon) {
-            const btnType = target.dataset.icon;
-            const btnIndex = target.dataset.index;
-            const projectName = target.dataset.name;
+    checkModalInUsed();
+    modal.close();
+    // INPUT DOES NOT CLEAR ITSELF, FIX IT
+    projectModalHandler.clearModalValues();
+});
+document.querySelector("#edit_project_dialog").addEventListener("click", (e) => {
+    const modal = document.querySelector("#edit_project_dialog");
+    clickingOutsideModals().closeModal(e, modal);
+})
 
 
-            // NEED TO IDENTIFY WHY THE EVENT LISTENERS ARE BEING ADDED MULTIPLE TIMES
-            if (btnType === "edit") {
-                EditModalInfo(projectName);
-                BtnEventsListeners(
-                    "#edit_project_dialog",
-                    "#" + target.id,
-                    "#edit_project_create_btn",
-                    () => editBtn(btnIndex, projectName)
-                );
-            } else if (btnType === "delete") {
-                DeleteModalInfo(projectName);
-                BtnEventsListeners(
-                    "#edit_project_dialog",
-                    "#" + target.id,
-                    "#edit_project_create_btn",
-                    () => delBtn(btnIndex, projectName)
-                );
-            }
-        }
-
-        // Handle project switching
-        if (target.dataset.name !== undefined && target.dataset.title !== undefined) {
-            const currentProject = target.dataset.title;
-            changeCurrentTitle(currentProject);
-            clearMainSectionContent();
-            filterProjects(currentProject);
-        }
+// Function to check what is the Current Modal Open
+function checkModalInUsed() {
+    const projectModalMainTitle = document.querySelector("#edit_project_dialog_main_title").dataset.name;
+    if (projectModalMainTitle == "edit") {
+        // editBtn(index, name)
+        console.log("editCHECK");
+    } else if (projectModalMainTitle == "delete") {
+        console.log("deleteCHECK");
     }
 }
 
-
 function editBtn(index, name) {
-    // findProject(index)
+    findProject(index)
+    console.log("Index:" + index);
+    console.log("name:" + name);
 }
 
 
+
 function delBtn(index, name) {
-    
     const projectNameConfirm = document.querySelector("#edit_project_title")
     if (name === projectNameConfirm.value) {
         console.log("Index:" + index);
-        // deleteProject(findProject(index));
     } else {
-        console.log("Wrong Project Name");
+        console.log("Wrong Project Name, used typed: " + projectNameConfirm);
     }
 }
 
@@ -72,45 +64,14 @@ function findProject(pIndex) {
     return projectsList.findIndex(project => project.index === pIndex);
 }
 
-function deleteProject(projectIndex) {
-    // console.log("Index:" + projectIndex);
-    projectsList.splice(projectIndex, 1);
-    reAssignIndex(projectsList);
-    // Clear existing projectss
-    clearMainSectionContent();
-    clearModalValues();
-    projectsList.forEach(project => {
-        createProjectDOM(project.index, project.name);
-    });
-}
+// function deleteProject(projectIndex) {
+//     console.log("Index:" + projectIndex);
+//     // projectsList.splice(projectIndex, 1);
+//     // reAssignIndex(projectsList);
+//     // // Clear existing projects
+//     // clearMainSectionContent();
+//     // projectsList.forEach(project => {
+//     //     createProjectDOM(project.index, project.name);
+//     // });
+// }
 
-
-// Modify the Edit/Delete Modal DOM
-function DeleteModalInfo(project) {
-    const projectModalMainTitle = document.querySelector("#edit_project_dialog_main_title");
-    const confirmName = document.querySelector("#edit_project_name");
-    const inputPlaceHolder = document.querySelector("#edit_project_title");
-    const confirmDeleteButton = document.querySelector("#edit_project_create_btn");
-
-    projectModalMainTitle.textContent = "Do you want to delete " + `"` + project + `"` + "?";
-    confirmName.textContent = "Confirm the Project Name: ";
-    inputPlaceHolder.placeholder = project;
-    confirmDeleteButton.textContent = "Delete Project";
-}
-
-function EditModalInfo(project) {
-    const projectModalMainTitle = document.querySelector("#edit_project_dialog_main_title");
-    const EditProjectName = document.querySelector("#edit_project_name");
-    const inputPlaceHolder = document.querySelector("#edit_project_title");
-    const confirmEditButton = document.querySelector("#edit_project_create_btn");
-
-    projectModalMainTitle.textContent = "Edit Project " + `"` + project + `"`;
-    EditProjectName.textContent = "Edit the Project Name: ";
-    inputPlaceHolder.placeholder = project;
-    confirmEditButton.textContent = "Edit Project";
-}
-
-function clearModalValues() {
-    const inputValue = document.querySelector("#edit_project_title");
-    inputValue.textContent = "";
-}

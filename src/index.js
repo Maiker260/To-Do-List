@@ -21,7 +21,7 @@ const newTaskElement = newTask;
 const newProjectElement = newProject;
 
 // Handle Project Buttons
-const projectBtns = handleProjectActions();
+// const projectBtns = handleProjectActions();
 
 // Function to Show the Content Selected
 const changeTasksDOMContent = replaceTasksContent();

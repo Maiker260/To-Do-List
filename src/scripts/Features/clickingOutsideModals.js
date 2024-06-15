@@ -1,7 +1,7 @@
    
 // Function to allow the user to close the Modal when clicking outside it.
-export default function manageModals() {
-    function closeNewTaskModal(e, dialog) {
+export default function clickingOutsideModals() {
+    function closeModal(e, dialog) {
         const dialogDimensions = dialog.getBoundingClientRect()
         if (
             e.clientX < dialogDimensions.left ||
@@ -13,5 +13,5 @@ export default function manageModals() {
         }
     }
 
-    return { closeNewTaskModal }
+    return { closeModal }
 }
