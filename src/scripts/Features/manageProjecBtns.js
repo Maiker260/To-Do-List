@@ -3,7 +3,7 @@ import handleProjectModals from "../DOM/handleProjectModals";
 export default function manageProjectBtns(e) {
     const projectSelected = e.target;
     const btnAction = projectSelected.dataset.icon;
-    const btnIndex = projectSelected.dataset.index;
+    const projectIndex = projectSelected.dataset.index;
     const projectName = projectSelected.dataset.name;
 
     const modal = document.querySelector("#edit_project_dialog");
@@ -13,11 +13,11 @@ export default function manageProjectBtns(e) {
 
     if (btnAction === "edit") {
         console.log("edit button pressed");
-        projectModalHandler.editModalInfo(projectName)
+        projectModalHandler.editModalInfo(projectName, projectIndex);
         modal.showModal();
     } else if (btnAction === "delete") {
         console.log("delete button pressed");
-        projectModalHandler.deleteModalInfo(projectName);
+        projectModalHandler.deleteModalInfo(projectName, projectIndex);
         modal.showModal(); 
     }
 }
