@@ -8,7 +8,6 @@ export default function webpageLoads() {
         showAllTasksInArray();
     })
 }
-
 // function to show all Tasks in the Tasks Array
 function showAllTasksInArray() {
     for (const i in tasksList) {

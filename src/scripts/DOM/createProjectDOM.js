@@ -35,7 +35,8 @@ export default function createProjectDOM(index, name) {
     projectTitle.textContent = name;
     newElement.assignAttributes(projectTitle, {
         "data-name": name + "-" + index,
-        "data-title": name
+        "data-title": name,
+        "data-type": "Project Container"
         }        
     );
 

@@ -3,6 +3,7 @@ import newTask from './scripts/Features/createNewTask';
 import newProject from './scripts/Features/createNewProject';
 import replaceTasksContent from './scripts/DOM/replaceTasksContent';
 import webpageLoads from './scripts/DOM/DOMLoads';
+import projectBtnsHandler from './scripts/DOM/projectBtnsHandler';
 
 // CSS Files
 import './style.css';
@@ -18,8 +19,8 @@ const newTaskElement = newTask;
 // Create a New Project
 const newProjectElement = newProject;
 
-// Handle Project Buttons
-// const projectBtns = handleProjectActions();
+// Edit/Delete an Existing Project
+const projectBtns = projectBtnsHandler();
 
 // Function to Show the Content Selected
 const changeTasksDOMContent = replaceTasksContent();
