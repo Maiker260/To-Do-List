@@ -37,7 +37,7 @@ export default function createProjectDOM(index, name) {
         "data-name": name + "-" + index,
         "data-title": name,
         "data-type": "Project Container"
-        }        
+        }
     );
 
         // Icons Container

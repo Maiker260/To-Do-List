@@ -13,8 +13,12 @@ export default function createTaskDOM(index, taskName, dueDate) {
         ]
     )
     newElement.assignAttributes(TaskContainer, {
-        "data-index": index
-    })
+        id: taskName + "-" + index,
+        "data-index": index,
+        "data-name": taskName + "-" + index,
+        "data-title": taskName
+        }
+    );
 
     // New Task Left Section
     const TaskDivContainerLeftSection = newElement.createElementWithClasses("div", [ 
@@ -44,7 +48,10 @@ export default function createTaskDOM(index, taskName, dueDate) {
         ]
     );
     newElement.assignAttributes(TaskLabel, {
-        for: `task${index}`
+        for: `task${index}`,
+        "data-name": taskName + "-" + index,
+        "data-title": taskName,
+        "data-type": "Task Container"
         }
     );
     
@@ -52,6 +59,12 @@ export default function createTaskDOM(index, taskName, dueDate) {
         "main_content_section_task_description_text_content"
     ]);
     TaskLabelText.textContent = taskName;
+    newElement.assignAttributes(TaskLabelText, {
+        "data-name": taskName + "-" + index,
+        "data-title": taskName,
+        "data-type": "Task Container"
+        }
+    );
     TaskLabel.appendChild(TaskLabelText);
 
         // Append Task Details to Task Left Container 
@@ -79,12 +92,47 @@ export default function createTaskDOM(index, taskName, dueDate) {
         "flex"
         ]
     );
+    newElement.assignAttributes(TaskRightIconsDivContainer, {
+        "data-name": taskName + "-" + index,
+        "data-title": taskName
+        }        
+    );
     
         // Append Icons to Container
     const icons = createIcons();
-    TaskRightIconsDivContainer.appendChild(icons.editSvg);
-    TaskRightIconsDivContainer.appendChild(icons.deleteSvg);
-    TaskRightIconsDivContainer.appendChild(icons.infoSvg);
+
+    const editTaskBtnID = "editTaskBtn" + "_" + taskName + "_" + index;
+    const editTaskDataIcon = "edit";
+    const deleteTaskBtnID = "deleteTaskBtn" + "_" + taskName + "_" + index;
+    const delTaskDataIcon = "delete";
+    const infoTaskBtnID = "infoTaskBtn" + "_" + taskName + "_" + index;
+    const infoTaskDataIcon = "info";
+
+    const editIcons = createIcons(editTaskBtnID, editTaskDataIcon, index, taskName);
+    const delIcons = createIcons(deleteTaskBtnID, delTaskDataIcon, index, taskName);
+    const infoIcons = createIcons(infoTaskBtnID, infoTaskDataIcon, index, taskName);
+
+    newElement.assignAttributes(editIcons.editSvg, {
+        id: editTaskBtnID,
+        "data-icon": editTaskDataIcon,
+        "data-index": index,
+        "data-name": taskName
+    });
+    newElement.assignAttributes(delIcons.deleteSvg, {
+        id: deleteTaskBtnID,
+        "data-icon": delTaskDataIcon,
+        "data-index": index,
+        "data-name": taskName
+    });
+    newElement.assignAttributes(infoIcons.infoSvg, {
+        id: infoTaskBtnID,
+        "data-icon": infoTaskDataIcon,
+        "data-index": index,
+        "data-name": taskName
+    });
+    TaskRightIconsDivContainer.appendChild(editIcons.editSvg);
+    TaskRightIconsDivContainer.appendChild(delIcons.deleteSvg);
+    TaskRightIconsDivContainer.appendChild(infoIcons.infoSvg);
 
         // Append Task Details to Task Right Container
     TaskDivContainerRightSection.appendChild(TaskDueDate);

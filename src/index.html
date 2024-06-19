@@ -40,9 +40,6 @@
                             <h3 class="add_new_edit_todo_task_input_label">Project:</h3>
                             <select class="add_new_edit_todo_task_input add_new_edit_todo_task_input_project" name="new_task_project" id="new_task_project" required>
                                 <option value="default" selected disabled>Select a Project</option>
-                                <option value="project1">Project1</option>
-                                <option value="project2">Project2</option>
-                                <option value="project3">Project3</option>
                             </select>
                         </label>
                         <label for="new_task_due_date" id="new_task_due_date_input" class="add_new_edit_todo_task_input_label_container new_edit_task_due_date_input flex">
@@ -102,22 +99,22 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
             </header>
-                <dialog id="add_new_project_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
-                    <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
-                        <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
-                            <h2 class="add_new_edit_project_dialog_main_title">Add a Project</h2>
-                        </div>
-                        <div class="add_new_edit_project_content_container grid">
-                            <div class="add_new_edit_project_content">
-                                <label for="add_new_edit_project_title" class="add_new_edit_project_title_container flex">
-                                    <h3>Project Name:</h3>
-                                    <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_edit_project_title" placeholder="Name">
-                                </label>
-                            </div>
-                            <button id="new_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Create Project</button>
-                        </div>
+            <dialog id="add_new_project_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
+                <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
+                    <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                        <h2 class="add_new_edit_project_dialog_main_title">Add a Project</h2>
                     </div>
-                </dialog>
+                    <div class="add_new_edit_project_content_container grid">
+                        <div class="add_new_edit_project_content">
+                            <label for="add_new_edit_project_title" class="add_new_edit_project_title_container flex">
+                                <h3>Project Name:</h3>
+                                <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_edit_project_title" placeholder="Name">
+                            </label>
+                        </div>
+                        <button id="new_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Create Project</button>
+                    </div>
+                </div>
+            </dialog>
             <dialog id="edit_project_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
                 <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
                     <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
@@ -135,28 +132,6 @@
                 </div>
             </dialog>
             <ul id="left_side_navbar_second_project_list" class="left_side_navbar_second_list flex">
-                <li id="dom_content_load_test" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex current_option">
-                    <p class="left_side_navbar_task_title pointer">New Project</p>
-                    <div class="left_side_navbar_second_list_icons_container flex">
-                        <svg class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                        </svg>                          
-                        <svg class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                        </svg>
-                    </div>
-                </li>
-                <li id="Another New Project again and again-3" data-index="3" data-name="Another New Project again and again-3" data-title="Another New Project again and again" class="left_side_navbar_list_all_titles left_side_navbar_list_titles icon_text_center left_side_navbar_second_list_titles left_side_navbar_second_list_project flex current_option">
-                    <p data-name="Another New Project again and again-3" data-title="Another New Project again and again" class="left_side_navbar_task_title pointer">Another New Project again and again</p>
-                    <div data-name="Another New Project again and again-3" data-title="Another New Project again and again" class="left_side_navbar_second_list_icons_container flex">
-                        <svg data-icon="edit" data-index="3" data-name="Another New Project again and again" class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path id="editBtn_Another New Project again and again_3" data-icon="edit" data-index="3" data-name="Another New Project again and again" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                        </svg>
-                        <svg class="interactive_icons left_side_navbar_second_list_project_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path id="deleteBtn_Another New Project again and again_3" data-icon="delete" data-index="3" data-name="Another New Project again and again" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                        </svg>
-                    </div>
-                </li>
             </ul>
         </section>
     </nav>
@@ -167,49 +142,62 @@
             </svg>
             <h2 id="main_content_section_main_title" data-title="All Tasks" class="main_content_section_main_title">All Tasks</h2>
         </header>
+        <dialog id="edit_task_dialog" class="add_new_edit_todo_task_dialog add_new_edit_dialog">
+            <div class="add_new_edit_todo_task_dialog_container add_new_edit_dialog_container flex">
+                <div class="add_new_edit_todo_task_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                    <h2 id="edit_task_dialog_main_title" class="add_new_edit_todo_task_dialog_main_title">Edit Task</h2>
+                </div>
+                <form action="dialog" class="add_new_edit_todo_task_dialog_input_area grid">
+                    <label for="new_task_name" id="new_task_name_input" class="add_new_edit_todo_task_input_label_container new_edit_task_name_input flex">
+                        <h3 class="add_new_edit_todo_task_input_label">Task:</h3>
+                        <input id="edit_task_name" class="add_new_edit_todo_task_input" type="text" name="new_task_name"  placeholder="Task's Name" required>
+                    </label>
+                    <label for="new_task_description" id="new_task_description_input" class="add_new_edit_todo_task_input_label_container new_edit_task_description_input flex">
+                        <h3 class="add_new_edit_todo_task_input_label">Description:</h3>
+                        <input id="edit_task_description" class="add_new_edit_todo_task_input" type="text" name="new_task_description"  placeholder="Description" required>
+                    </label>
+                    <label for="new_task_project" id="new_task_project_input" class="add_new_edit_todo_task_input_label_container new_edit_task_project_input flex">
+                        <h3 class="add_new_edit_todo_task_input_label">Project:</h3>
+                        <select id="edit_task_project" class="add_new_edit_todo_task_input add_new_edit_todo_task_input_project" name="new_task_project" required>
+                            <option value="default" selected disabled>Select a Project</option>
+                        </select>
+                    </label>
+                    <label for="new_task_due_date" id="new_task_due_date_input" class="add_new_edit_todo_task_input_label_container new_edit_task_due_date_input flex">
+                        <h3 class="add_new_edit_todo_task_input_label">Due Date:</h3>
+                        <input id="edit_task_due_date" class="add_new_edit_todo_task_input add_new_edit_todo_task_input_due_date" type="date" name="new_task_due_date" required>
+                    </label>
+                    <label for="new_task_priority" id="new_task_priority_input" class="add_new_edit_todo_task_input_label_container new_edit_task_priority_input flex">
+                        <h3 class="add_new_edit_todo_task_input_label">Priority:</h3>
+                        <select id="edit_task_priority" class="add_new_edit_todo_task_input add_new_edit_todo_task_input_priority" name="new_task_priority" required>
+                            <option value="default" selected disabled>Select a Priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </label>
+                    <button id="edit_task_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Edit Task</button>
+                </form>
+            </div>
+        </dialog>
+        <dialog id="delete_task_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
+            <div class="add_new_edit_project_dialog_container add_new_edit_dialog_container">
+                <div class="add_new_edit_project_dialog_main_title_container add_new_edit_dialog_main_title_container">
+                    <h2 id="delete_task_dialog_main_title" data-name="delete" class="add_new_edit_project_dialog_main_title">Do you want to delete</h2>
+                </div>
+                <div class="add_new_edit_project_content_container grid">
+                    <div class="add_new_edit_project_content">
+                        <label for="delete_task_title" class="add_new_edit_project_title_container flex">
+                            <h3 id="delete_task_name">Delete Task</h3>
+                            <input id="delete_task_title" type="text" name="delete_task_title" data-task-id="" data-task-name="" class="add_new_edit_project_title" placeholder="DELETE">
+                        </label>
+                    </div>
+                    <button id="delete_task_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Delete Task</button>
+                </div>
+            </div>
+        </dialog>
         <section class="main_content_section_task_container flex">
             <h3 class="main_content_section_task_title">Tasks</h3>
             <section id="main_content_section_task_list_container" class="main_content_section_task_list_container flex">
-                <article class="main_content_section_individual_task flex current_option">
-                    <div class="main_content_section_task_description_left flex">
-                        <input type="checkbox" name="task_checkbox1" class="main_content_section_task_checkbox interactive_icons pointer" id="task1">
-                        <label for="task1" class="main_content_section_task_description_text pointer"><p>Here is going to be my first Pending Task.</p></label>
-                    </div>
-                    <div class="main_content_section_task_description_right flex">
-                        <p class="main_content_section_task_due_date">Jun-26th-2024</p>
-                        <div class="main_content_section_task_description_right_icons flex">
-                            <svg class="interactive_icons main_content_section_task_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                            </svg>                          
-                            <svg class="interactive_icons main_content_section_task_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                            </svg>
-                            <svg class="main_content_section_task_icon interactive_icons pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                            </svg>                  
-                        </div>
-                    </div>
-                </article>
-                <article class="main_content_section_individual_task flex current_option">
-                    <div class="main_content_section_task_description_left flex">
-                        <input type="checkbox" name="task_checkbox2" class="interactive_icons main_content_section_task_checkbox pointer" id="task2">
-                        <label for="task2" class="main_content_section_task_description_text pointer"><p class="main_content_section_task_description_text_content">Here is going to be my second Pending Task.</p></label>
-                    </div>
-                    <div class="main_content_section_task_description_right flex">
-                        <p class="main_content_section_task_due_date">Dec-25th-2024</p>
-                        <div class="main_content_section_task_description_right_icons flex">
-                            <svg class="interactive_icons main_content_section_task_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-                            </svg>                          
-                            <svg class="interactive_icons main_content_section_task_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                            </svg>
-                            <svg class="interactive_icons main_content_section_task_icon pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                            </svg>                  
-                        </div>
-                    </div>
-                </article>
             </section>
         </section>
     </main>
