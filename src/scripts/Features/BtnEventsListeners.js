@@ -9,7 +9,8 @@ export default function BtnEventsListeners(modalSelector, btnSelector, createEdi
     // Open Modal
     openBtn.addEventListener("click", () => {
         modal.showModal();
-        showProjectsAvailable();
+        // Show Available Projects in New Task Modal
+        showProjectsAvailable("#new_task_project");
     });
 
     // Close the Modal when clicking outside it.

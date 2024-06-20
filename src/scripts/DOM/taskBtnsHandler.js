@@ -1,4 +1,4 @@
-import manageTaskBtns from "../Features/manageTaskBtns";
+import { manageTaskBtns, editTaskBtn } from "../Features/manageTaskBtns";
 import clickingOutsideModals from "../Features/clickingOutsideModals";
 
 export default function taskBtnsHandler() {
@@ -14,11 +14,11 @@ export default function taskBtnsHandler() {
         });
     });
 
-    // Apply the action and close the modal when the Edit/Delete Button is pressed or user clicked outside dialog
-    // document.querySelector("#edit_project_create_btn").addEventListener("click", () => {
-    //     taskBtns.checkProjectModalInUsed();
-    //     modal.close();
-    //     projectModalHandler.clearModalValues();
+    // Apply the action and close the modal when the Edit Button is pressed or user clicked outside dialog
+    // document.querySelector("#edit_task_btn").addEventListener("click", () => {
+    //     editTaskBtn(e);
+        // modal.close();
+        // projectModalHandler.clearModalValues();
     // });
     // // Allow the user to close the Modal when clicking outside it.
     // document.querySelector("#edit_project_dialog").addEventListener("click", (e) => {

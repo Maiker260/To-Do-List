@@ -2,12 +2,12 @@ import { projectsList } from "../..";
 import createElementDOM from "./createElementDOM";
 
 // Shows Projects available in the "Project" Dropdown menu in the New Task Section.
-export default function showProjectsAvailable() {
+export default function showProjectsAvailable(modal) {
 
     // Clear All Options from the List
-    clearSelectOptions();
+    clearSelectOptions(modal);
 
-    const newTaskProjectList = document.querySelector("#new_task_project");
+    const newTaskProjectList = document.querySelector(modal);
     const newElement = createElementDOM();
 
     const defaultOption = newElement.createElementWithClasses("option");
@@ -27,7 +27,7 @@ export default function showProjectsAvailable() {
     });
 }
 
-function clearSelectOptions() {
-    const newTaskProjectList = document.querySelector("#new_task_project")
+function clearSelectOptions(modal) {
+    const newTaskProjectList = document.querySelector(modal)
     newTaskProjectList.textContent = "";
 }
