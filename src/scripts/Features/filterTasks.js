@@ -18,7 +18,7 @@ export default function filterTasks() {
     }
 
     function urgentTasks() {
-        filterAndCreateTasks(task => task.priority === "urgent" && !task.completed);
+        filterAndCreateTasks(task => task.priority === "Urgent" && !task.completed);
     }
 
     function completedTasks() {

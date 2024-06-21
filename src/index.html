@@ -50,9 +50,9 @@
                             <h3 class="add_new_edit_todo_task_input_label">Priority:</h3>
                             <select class="add_new_edit_todo_task_input add_new_edit_todo_task_input_priority" name="new_task_priority" id="new_task_priority" required>
                                 <option value="default" selected disabled>Select a Priority</option>
-                                <option value="low">Low</option>
-                                <option value="medium">Medium</option>
-                                <option value="urgent">Urgent</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Urgent">Urgent</option>
                             </select>
                         </label>
                         <button id="new_task_create_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Create Task</button>
@@ -143,7 +143,7 @@
             <h2 id="main_content_section_main_title" data-title="All Tasks" class="main_content_section_main_title">All Tasks</h2>
         </header>
         <dialog id="edit_task_dialog" class="add_new_edit_todo_task_dialog add_new_edit_dialog">
-            <div class="add_new_edit_todo_task_dialog_container add_new_edit_dialog_container flex">
+            <div class="add_new_edit_dialog_container flex">
                 <div class="add_new_edit_todo_task_dialog_main_title_container add_new_edit_dialog_main_title_container">
                     <h2 id="edit_task_dialog_main_title" class="add_new_edit_todo_task_dialog_main_title">Edit Task</h2>
                 </div>
@@ -170,12 +170,12 @@
                         <h3 class="add_new_edit_todo_task_input_label">Priority:</h3>
                         <select id="edit_task_priority" class="add_new_edit_todo_task_input add_new_edit_todo_task_input_priority" name="new_task_priority" required>
                             <option value="default" selected disabled>Select a Priority</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="urgent">Urgent</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Urgent">Urgent</option>
                         </select>
                     </label>
-                    <button id="edit_task_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Edit Task</button>
+                    <button id="edit_task_btn" data-index="" class="new_edit_task_create_btn new_edit_create_btn pointer">Edit Task</button>
                 </form>
             </div>
         </dialog>
@@ -186,12 +186,46 @@
                 </div>
                 <div class="add_new_edit_project_content_container grid">
                     <div class="add_new_edit_project_content">
-                        <label for="delete_task_title" class="add_new_edit_project_title_container flex">
+                        <label for="delete_task_input" class="add_new_edit_project_title_container flex">
                             <h3 id="delete_task_name">Delete Task</h3>
-                            <input id="delete_task_title" type="text" name="delete_task_title" data-task-id="" data-task-name="" class="add_new_edit_project_title" placeholder="DELETE">
+                            <input id="delete_task_input" type="text" name="delete_task_input" class="add_new_edit_project_title" placeholder="DELETE">
                         </label>
                     </div>
-                    <button id="delete_task_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Delete Task</button>
+                    <button id="delete_task_btn" data-index="" class="new_edit_project_create_btn new_edit_create_btn pointer">Delete Task</button>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="task_info_dialog" class="add_new_edit_project_dialog add_new_edit_dialog">
+            <div class="add_new_edit_dialog_container flex">
+                <div class="add_new_edit_dialog_main_title_container">
+                    <h2 id="info_task_dialog_main_title" data-name="info" class="add_new_edit_todo_task_dialog_main_title">Information</h2>
+                </div>
+                <div class="add_new_edit_todo_task_dialog_input_area task_info_dialog_info_section_container grid">
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Name:</h3>
+                        <p id="task_info_dialog_task_name" data-info="task_name" class="task_info_dialog_info">Testing to see how the user will see this section</p>
+                    </div>
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Description:</h3>
+                        <p id="task_info_dialog_task_description" data-info="task_description" class="task_info_dialog_info task_info_task_description">Testing to see how the user will see this section</p>
+                    </div>
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Project:</h3>
+                        <p id="task_info_dialog_task_project" data-info="task_project" class="task_info_dialog_info">Testing to see how the user will see this section</p>
+                    </div>
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Due date:</h3>
+                        <p id="task_info_dialog_task_due_date" data-info="task_due_date" class="task_info_dialog_info">Testing to see how the user will see this section</p>
+                    </div>
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Priority:</h3>
+                        <p id="task_info_dialog_task_priority" data-info="task_priority" class="task_info_dialog_info">Testing to see how the user will see this section</p>
+                    </div>
+                    <div class="task_info_dialog_info_container flex">
+                        <h3 class="task_info_dialog_info_title">Status:</h3>
+                        <p id="task_info_dialog_task_status" data-info="task_status" class="task_info_dialog_info">Testing to see how the user will see this section</p>
+                    </div>
+                    <button id="info_task_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Close</button>
                 </div>
             </div>
         </dialog>

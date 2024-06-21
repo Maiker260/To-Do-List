@@ -296,6 +296,24 @@ dialog::backdrop {
     max-height: 3em;
 }
 
+    /* Modal to see the Information of a Task */
+
+.task_info_dialog_info_container {
+    align-items: center;
+    margin-bottom: 0.2em;
+}
+
+.task_info_dialog_info_title {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.task_info_dialog_info {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+
     /* Main Content Section - Content  */
 
 .main_content_section_task_title {
