@@ -11,6 +11,6 @@ export default function webpageLoads() {
 // function to show all Tasks in the Tasks Array
 function showAllTasksInArray() {
     for (const i in tasksList) {
-        createTaskDOM(i, tasksList[i].name, tasksList[i].dueDate);
+        createTaskDOM(i, tasksList[i].name, tasksList[i].dueDate, tasksList[i].completed);
     }
 }

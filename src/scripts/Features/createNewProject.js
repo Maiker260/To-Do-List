@@ -19,6 +19,11 @@ function createNewProject() {
     // Create New Project
     function addNewProjectToList() {
 
+        // Validate before adding a new task
+        if (!rejectBlankValue(addNewProjectField)) {
+            return;
+        }
+
         const newProject = new Project(
             `${addNewProjectField.value}`
         )
@@ -36,20 +41,41 @@ function createNewProject() {
         checkCurrentTaskSectionTitle();
 
         // Clear Current Information
-        clearCurrentForm();
+        clearCurrentForm(addNewProjectField);
 
         // Add Project to the Project DOM List
         createProjectDOM(newProject.index, newProject.name);
     }
 
-    // Clear Current Information
-    function clearCurrentForm() {
-        addNewProjectField.value = "";
-    }
-
     return { addNewProjectToList }
 }
 
+function rejectBlankValue(field) {
+    if (field.value.trim() == "") {
+        alert("The Project Name field cannot be blank.");
+        clearCurrentForm(field);
+        return false
+    } else if (!rejectDuplicateProjectNames(field.value)) {
+        alert("The Project Name already exists, try again.");
+        clearCurrentForm(field);
+        return false
+    }
+    return true
+}
+
+function rejectDuplicateProjectNames(name) {
+    for (let key in projectsList) {
+        if (projectsList[key].name === name) {
+            return false
+        }
+    }
+    return true
+}
+
+// Clear Current Information
+function clearCurrentForm(field) {
+    field.value = "";
+}
 
 const newProject = createNewProject();
 

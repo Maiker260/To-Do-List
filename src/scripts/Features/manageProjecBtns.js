@@ -39,7 +39,6 @@ export default function manageProjectBtns() {
             delBtn(projectIndex, projectName);
         }
     }
-
     return { checkButtonPressed, checkProjectModalInUsed }
 }
 
@@ -48,7 +47,6 @@ function editBtn(index, oldProjectName) {
     const newProjectName = document.querySelector("#edit_project_title").value;
     editProject(findProject(index), newProjectName);
     modifyTaskProject(findTask(oldProjectName), newProjectName);
-    console.table(tasksList);
 }
 
 function delBtn(index, name) {
@@ -56,7 +54,6 @@ function delBtn(index, name) {
     if (name === projectNameConfirm) {
         deleteProject(findProject(index));
         unassignTaskProject(findTask(name));
-        console.table(tasksList);
     } else {
         alert("Wrong Project Name, Project: " + projectNameConfirm + " does not match. Try again.");
     }

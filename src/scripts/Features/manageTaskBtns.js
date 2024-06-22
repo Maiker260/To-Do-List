@@ -1,10 +1,14 @@
 import handleTaskModals from "../DOM/handleTaskModals";
 import showProjectsAvailable from "../DOM/showProjectsAvailable";
 import { tasksList } from "../..";
+import taskCompleteStatus from "./TaskCompleteStatus";
+import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
+import clearMainSectionContent from "../DOM/clearMainSectionContent";
 
 export default function manageTaskBtns() {
 
     const taskModals = handleTaskModals();
+    const taskStatus = taskCompleteStatus();
 
     function checkTaskButtonPressed(e) {
 
@@ -26,9 +30,14 @@ export default function manageTaskBtns() {
             taskModals.deleteTaskModalInfo(taskName, taskIndex);
             deleteModal.showModal();
         } else if (btnAction === "info") {
-            const task = taskInfoBtn(taskIndex);
+            const task = findTaskInfo(taskIndex);
             taskModals.infoTaskModalInfo(task);
             infoTaskModal.showModal();
+        } else if (btnAction === "checkbox") {
+            const task = findTaskInfo(taskIndex);
+            taskStatus.changeTaskStatus(task);
+            clearMainSectionContent();
+            checkCurrentTaskSectionTitle();
         }
     }
 
@@ -37,7 +46,7 @@ export default function manageTaskBtns() {
         const taskSelected = e.target;
         const taskIndex = taskSelected.dataset.index;
     
-        const taskInArray =  tasksList[findTask(taskIndex)];
+        const taskInArray =  tasksList[findTaskIndex(taskIndex)];
     
         const newTaskValues = {
             name: document.querySelector("#edit_task_name"),
@@ -46,6 +55,21 @@ export default function manageTaskBtns() {
             dueDate: document.querySelector("#edit_task_due_date"),
             priority: document.querySelector("#edit_task_priority")
         };
+
+        function rejectBlankValues() {
+            for (let key in newTaskValues) {
+                if (newTaskValues[key].value.trim() === "" || 
+                    newTaskValues[key].value.trim() === "default") {
+                    alert(`The ${key} field cannot be blank.`);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        if (!rejectBlankValues()) {
+            return
+        }
     
         taskInArray.name = newTaskValues.name.value;
         taskInArray.description = newTaskValues.description.value;
@@ -61,20 +85,19 @@ export default function manageTaskBtns() {
         const confirmDeleteInput = document.querySelector("#delete_task_input");
 
         if (confirmDeleteInput.value == "DELETE") {
-            tasksList.splice(findTask(taskIndex), 1);
+            tasksList.splice(findTaskIndex(taskIndex), 1);
         } else {
             alert("Type DELETE to confirm.");
         }
     }
 
-    function taskInfoBtn(taskIndex) {
-        return tasksList.find(task => task.index === taskIndex);
-    }
-
     return { checkTaskButtonPressed, editTaskBtn, deleteTaskBtn }
 }
 
-function findTask(tIndex) {
+function findTaskIndex(tIndex) {
     return tasksList.findIndex(task => task.index === tIndex);
 }
 
+function findTaskInfo(taskIndex) {
+    return tasksList.find(task => task.index === taskIndex);
+}

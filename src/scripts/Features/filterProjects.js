@@ -9,7 +9,7 @@ export default function filterProjects(project) {
 function filterAndCreateProject(filter) {
     reAssignIndex(tasksList);
     filterList(tasksList, filter).forEach(task => {
-        createTaskDOM(task.index, task.name, task.dueDate);
+        createTaskDOM(task.index, task.name, task.dueDate, task.completed);
     });
 }
 

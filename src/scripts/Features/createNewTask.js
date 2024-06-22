@@ -26,8 +26,24 @@ function createNewTask() {
         priority: document.querySelector("#new_task_priority")
     };
 
+    function rejectBlankValues() {
+        for (let key in taskFormElements) {
+            if (taskFormElements[key].value.trim() === "" || 
+                taskFormElements[key].value.trim() === "default") {
+                alert(`The ${key} field cannot be blank.`);
+                return false;
+            }
+        }
+        return true;
+    }
+
     // Create New Task
     function addNewTaskToList() {
+
+        // Validate before adding a new task
+        if (!rejectBlankValues()) {
+            return;
+        }
 
         const newTask = new Task(
             taskFormElements.name.value,

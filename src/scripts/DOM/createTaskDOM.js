@@ -1,18 +1,20 @@
 import createIcons from "./createIcons";
 import createElementDOM from "./createElementDOM";
+import taskCompleteStatus from "../Features/TaskCompleteStatus";
 
-export default function createTaskDOM(index, taskName, dueDate) {
+export default function createTaskDOM(index, taskName, dueDate, taskStatus) {
 
     const newElement = createElementDOM();
+    const taskComplete = taskCompleteStatus();
 
     // Task Main Container
-    const TaskContainer = newElement.createElementWithClasses("article", [
+    const taskContainer = newElement.createElementWithClasses("article", [
         "main_content_section_individual_task",
         "flex",
         "current_option"
         ]
     )
-    newElement.assignAttributes(TaskContainer, {
+    newElement.assignAttributes(taskContainer, {
         id: taskName + "-" + index,
         "data-index": index,
         "data-name": taskName + "-" + index,
@@ -21,86 +23,95 @@ export default function createTaskDOM(index, taskName, dueDate) {
     );
 
     // New Task Left Section
-    const TaskDivContainerLeftSection = newElement.createElementWithClasses("div", [ 
+    const taskDivContainerLeftSection = newElement.createElementWithClasses("div", [ 
         "main_content_section_task_description_left",
         "flex"
         ]
     );
 
         // Checkbox
-    const TaskCheckbox = newElement.createElementWithClasses("input", [
+    const taskCheckbox = newElement.createElementWithClasses("input", [
         "main_content_section_task_checkbox",
         "interactive_icons",
         "pointer"
         ]
     );
-    newElement.assignAttributes(TaskCheckbox, {
+    newElement.assignAttributes(taskCheckbox, {
         type: "checkbox",
         name: `task_checkbox${index}`,
-        id: `task${index}`
+        id: `task${index}`,
+        "data-icon": "checkbox",
+        "data-index": index
         }
     );
 
         // Task Title
-    const TaskLabel = newElement.createElementWithClasses("label", [
+    const taskLabel = newElement.createElementWithClasses("label", [
         "main_content_section_task_description_text",
         "pointer"
         ]
     );
-    newElement.assignAttributes(TaskLabel, {
+    newElement.assignAttributes(taskLabel, {
         for: `task${index}`,
         "data-name": taskName + "-" + index,
         "data-title": taskName,
-        "data-type": "Task Container"
+        "data-type": "Task Container",
+        "data-index": index
         }
     );
     
-    const TaskLabelText = newElement.createElementWithClasses("p", [
+    const taskLabelText = newElement.createElementWithClasses("p", [
         "main_content_section_task_description_text_content"
     ]);
-    TaskLabelText.textContent = taskName;
-    newElement.assignAttributes(TaskLabelText, {
+    taskLabelText.textContent = taskName;
+    newElement.assignAttributes(taskLabelText, {
         "data-name": taskName + "-" + index,
         "data-title": taskName,
-        "data-type": "Task Container"
+        "data-type": "Task Container",
+        "data-index": index
         }
     );
-    TaskLabel.appendChild(TaskLabelText);
+    taskLabel.appendChild(taskLabelText);
 
         // Append Task Details to Task Left Container 
-    TaskDivContainerLeftSection.appendChild(TaskCheckbox);
-    TaskDivContainerLeftSection.appendChild(TaskLabel);
+    taskDivContainerLeftSection.appendChild(taskCheckbox);
+    taskDivContainerLeftSection.appendChild(taskLabel);
 
 
     // New Task Right Section
-    const TaskDivContainerRightSection = newElement.createElementWithClasses("div", [
+    const taskDivContainerRightSection = newElement.createElementWithClasses("div", [
         "main_content_section_task_description_right",
         "flex"
         ]
     );
 
         // Due Date
-    const TaskDueDate = newElement.createElementWithClasses("p", [
+    const taskDueDate = newElement.createElementWithClasses("p", [
         "main_content_section_task_due_date"
         ]
     );
-    TaskDueDate.textContent = dueDate;
+    taskDueDate.textContent = dueDate;
+
+        // Add more styles if the Task is Completed
+    if (taskComplete.checkTaskStatus(taskStatus)) {
+        taskLabelText.classList.add("task_completed");
+        taskDueDate.classList.add("task_completed");
+        taskCheckbox.checked = true;
+    }
 
         // Icons Container
-    const TaskRightIconsDivContainer = newElement.createElementWithClasses("div", [
+    const taskRightIconsDivContainer = newElement.createElementWithClasses("div", [
         "main_content_section_task_description_right_icons",
         "flex"
         ]
     );
-    newElement.assignAttributes(TaskRightIconsDivContainer, {
+    newElement.assignAttributes(taskRightIconsDivContainer, {
         "data-name": taskName + "-" + index,
         "data-title": taskName
         }        
     );
     
         // Append Icons to Container
-    const icons = createIcons();
-
     const editTaskBtnID = "editTaskBtn" + "_" + taskName + "_" + index;
     const editTaskDataIcon = "edit";
     const deleteTaskBtnID = "deleteTaskBtn" + "_" + taskName + "_" + index;
@@ -130,20 +141,20 @@ export default function createTaskDOM(index, taskName, dueDate) {
         "data-index": index,
         "data-name": taskName
     });
-    TaskRightIconsDivContainer.appendChild(editIcons.editSvg);
-    TaskRightIconsDivContainer.appendChild(delIcons.deleteSvg);
-    TaskRightIconsDivContainer.appendChild(infoIcons.infoSvg);
+    taskRightIconsDivContainer.appendChild(editIcons.editSvg);
+    taskRightIconsDivContainer.appendChild(delIcons.deleteSvg);
+    taskRightIconsDivContainer.appendChild(infoIcons.infoSvg);
 
         // Append Task Details to Task Right Container
-    TaskDivContainerRightSection.appendChild(TaskDueDate);
-    TaskDivContainerRightSection.appendChild(TaskRightIconsDivContainer);
+    taskDivContainerRightSection.appendChild(taskDueDate);
+    taskDivContainerRightSection.appendChild(taskRightIconsDivContainer);
 
     //Append Sections to Task Main Container
 
-    TaskContainer.appendChild(TaskDivContainerLeftSection);
-    TaskContainer.appendChild(TaskDivContainerRightSection);
+    taskContainer.appendChild(taskDivContainerLeftSection);
+    taskContainer.appendChild(taskDivContainerRightSection);
 
     // Append Task to the DOM
     const listContainer = document.querySelector("#main_content_section_task_list_container");
-    listContainer.appendChild(TaskContainer);
+    listContainer.appendChild(taskContainer);
 }

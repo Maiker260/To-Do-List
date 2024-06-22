@@ -6,7 +6,7 @@ import reAssignIndex from "./reAssignIndex";
 export default function filterTasks() {
     // Should show all tasks, non-completed first and then the completed ones, FIX IT!
     function allTasks() {
-        filterAndCreateTasks(task => !task.completed);
+        filterAndCreateTasks(task => task);
     }
 
     function todayTask() {
@@ -32,7 +32,7 @@ export default function filterTasks() {
 function filterAndCreateTasks(filter) {
     reAssignIndex(tasksList);
     filterList(tasksList, filter).forEach(task => {
-        createTaskDOM(task.index, task.name, task.dueDate);
+        createTaskDOM(task.index, task.name, task.dueDate, task.completed);
     });
 }
 

@@ -8,7 +8,7 @@ export default function handleTaskModals() {
         editTaskModalMainTitle.textContent = "Edit Task " + `"` + taskName + `"`;
         editTaskModalBtn.dataset.index = taskindex;
     }
-
+    
     function deleteTaskModalInfo(taskName, taskindex) {
         const deleteTaskModalMainTitle = document.querySelector("#delete_task_dialog_main_title");
         const confirmName = document.querySelector("#delete_task_name");
@@ -39,7 +39,7 @@ export default function handleTaskModals() {
         infoTaskValues.project.textContent = task.project;
         infoTaskValues.dueDate.textContent = changeDateFormat(task.dueDate);
         infoTaskValues.priority.textContent = task.priority;
-        infoTaskValues. status.textContent = checkTaskStatus(task.status);
+        infoTaskValues.status.textContent = checkTaskStatus(task.completed);
     }
 
     function clearEditModalInfo() {

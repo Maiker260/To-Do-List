@@ -55,13 +55,11 @@ export default function taskBtnsHandler() {
 
     // Allow the user to close the Modal when clicking outside it.
     
-    editModal.addEventListener("click", (e) => {
-        clickingOutsideModals().closeModal(e, editModal);
-        handleTaskModals().clearEditModalInfo();
+    editTaskModal.addEventListener("click", (e) => {
+        clickingOutsideModals().closeModal(e, editTaskModal);
     })
-    deleteModal.addEventListener("click", (e) => {
-        clickingOutsideModals().closeModal(e, deleteModal);
-        handleTaskModals().clearDeleteModalInfo();
+    deleteTaskModal.addEventListener("click", (e) => {
+        clickingOutsideModals().closeModal(e, deleteTaskModal);
     })
     infoTaskModal.addEventListener("click", (e) => {
         clickingOutsideModals().closeModal(e, infoTaskModal);

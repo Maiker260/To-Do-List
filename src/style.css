@@ -371,6 +371,9 @@ dialog::backdrop {
     gap: 0.3em;
 }
 
+.task_completed {
+    text-decoration: line-through;
+}
 
 
 /* Main Footer TO_REMOVE_LATER */
