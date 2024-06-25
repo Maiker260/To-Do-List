@@ -4,6 +4,7 @@ import { tasksList } from "../..";
 import taskCompleteStatus from "./TaskCompleteStatus";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
+import { modifyDataInLocalStorage } from "./DataInLocalStorage";
 
 export default function manageTaskBtns() {
 
@@ -36,6 +37,8 @@ export default function manageTaskBtns() {
         } else if (btnAction === "checkbox") {
             const task = findTaskInfo(taskIndex);
             taskStatus.changeTaskStatus(task);
+            // Recreate all Keys in the Local Storage
+            modifyDataInLocalStorage().recreateAllKeys();
             clearMainSectionContent();
             checkCurrentTaskSectionTitle();
         }
@@ -86,6 +89,8 @@ export default function manageTaskBtns() {
 
         if (confirmDeleteInput.value == "DELETE") {
             tasksList.splice(findTaskIndex(taskIndex), 1);
+            // Recreate all Keys in the Local Storage
+            modifyDataInLocalStorage().recreateAllKeys();
         } else {
             alert("Type DELETE to confirm.");
         }

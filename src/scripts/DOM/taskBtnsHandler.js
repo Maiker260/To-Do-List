@@ -5,6 +5,7 @@ import { tasksList } from "../..";
 import checkCurrentTaskSectionTitle from "./checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "./clearMainSectionContent";
 import handleTaskModals from "../DOM/handleTaskModals";
+import { modifyDataInLocalStorage } from "../Features/DataInLocalStorage";
 
 export default function taskBtnsHandler() {
 
@@ -26,6 +27,8 @@ export default function taskBtnsHandler() {
         e.preventDefault();
         taskBtns.editTaskBtn(e);
         reAssignIndex(tasksList);
+        // Recreate all Keys in the Local Storage
+        modifyDataInLocalStorage().recreateAllKeys();
         // Close and clear the Modal
         editTaskModal.close();
         handleTaskModals().clearEditModalInfo();
@@ -39,6 +42,8 @@ export default function taskBtnsHandler() {
         e.preventDefault();
         taskBtns.deleteTaskBtn(e);
         reAssignIndex(tasksList);
+        // Recreate all Keys in the Local Storage
+        modifyDataInLocalStorage().recreateAllKeys();
         // Close and clear the Modal
         deleteTaskModal.close();
         handleTaskModals().clearDeleteModalInfo();

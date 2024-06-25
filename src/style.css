@@ -376,6 +376,29 @@ dialog::backdrop {
 }
 
 
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    .main_content_section {
+        padding: 13px 1em;
+    }
+
+    .main_content_section_task_container {
+        padding: 1em;
+    }
+
+    .main_footer {
+        background-color: red;
+    }  
+}
+
+@media (max-width: 780px) {
+
+
+
+}
+
+
 /* Main Footer TO_REMOVE_LATER */
 .main_footer {
     display: flex;

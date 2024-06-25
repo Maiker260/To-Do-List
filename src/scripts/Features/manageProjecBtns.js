@@ -49,6 +49,16 @@ function editBtn(index, oldProjectName) {
     modifyTaskProject(findTask(oldProjectName), newProjectName);
 }
 
+function editProject(projectIndex, newProjectName) {
+    projectsList[projectIndex].name = newProjectName;
+    resetProjectList();
+    returnToMainPage();
+}
+
+function modifyTaskProject(filter, newProjectName) {
+    filter.forEach(task => task.project = newProjectName)
+}
+
 function delBtn(index, name) {
     const projectNameConfirm = document.querySelector("#edit_project_title").value
     if (name === projectNameConfirm) {
@@ -59,32 +69,23 @@ function delBtn(index, name) {
     }
 }
 
-function findProject(pIndex) {
-    return projectsList.findIndex(project => project.index === pIndex);
-}
-
-function findTask(pName) {
-    return tasksList.filter((task => task.project == pName))    
+function deleteProject(projectIndex) {
+    projectsList.splice(projectIndex, 1);
+    // Reset Projects
+    resetProjectList();
+    returnToMainPage();
 }
 
 function unassignTaskProject(filter)  {
     return filter.forEach(task => task.project = "No Project Folder Assigned")
 }
 
-function modifyTaskProject(filter, newProjectName) {
-    filter.forEach(task => task.project = newProjectName)
+function findProject(pIndex) {
+    return projectsList.findIndex(project => project.index === pIndex);
 }
 
-function deleteProject(projectIndex) {
-    projectsList.splice(projectIndex, 1);
-    resetProjectList();
-    returnToMainPage();
-}
-
-function editProject(projectIndex, newProjectName) {
-    projectsList[projectIndex].name = newProjectName;
-    resetProjectList();
-    returnToMainPage();
+function findTask(pName) {
+    return tasksList.filter((task => task.project == pName))    
 }
 
 function resetProjectList() {

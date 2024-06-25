@@ -3,6 +3,7 @@ import { tasksList } from "../..";
 import reAssignIndex from "./reAssignIndex";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
+import { storeDataInLocalStorage } from "./DataInLocalStorage";
 
 function createNewTask() {    
 
@@ -58,6 +59,9 @@ function createNewTask() {
 
         // Assign a new Index value, in case that a Task was deleted before.
         reAssignIndex(tasksList);
+
+        // Add New Task to the Local Storage
+        storeDataInLocalStorage().storeTask(newTask);
 
         // Clear DOM Current Content
         clearMainSectionContent();

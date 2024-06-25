@@ -4,6 +4,7 @@ import { projectsList } from "../..";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
 import reAssignIndex from "./reAssignIndex";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
+import { storeDataInLocalStorage } from "./DataInLocalStorage";
 
 function createNewProject() {
 
@@ -33,6 +34,9 @@ function createNewProject() {
 
         // Assign a new Index value, in case that a Project was deleted before.
         reAssignIndex(projectsList);
+
+        // Add New Project to the Local Storage
+        storeDataInLocalStorage().storeProject(newProject);
 
         // Clear DOM Current Content
         clearMainSectionContent();
