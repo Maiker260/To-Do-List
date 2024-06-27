@@ -4,7 +4,6 @@ import { isToday, isThisWeek } from "date-fns";
 import reAssignIndex from "./reAssignIndex";
 
 export default function filterTasks() {
-    // Should show all tasks, non-completed first and then the completed ones.
     function allTasks() {
         filterAndCreateTasks(task => !task.completed)
     }
