@@ -1,15 +1,16 @@
 import clickingOutsideModals from "./clickingOutsideModals";
 import showProjectsAvailable from "../DOM/showProjectsAvailable";
 
+// Function to add the Event Listeners to the DOM easier.
 export default function BtnEventsListeners(modalSelector, btnSelector, createEditBtnSelector, createEditFunction) {
 
     const modal = document.querySelector(modalSelector);
     const openBtn = document.querySelector(btnSelector);
 
-    // Open Modal
+    // Open Modal.
     openBtn.addEventListener("click", () => {
         modal.showModal();
-        // Show Available Projects in New Task Modal
+        // Show Available Projects in New Task Modal.
         showProjectsAvailable("#new_task_project");
     });
 
@@ -20,11 +21,8 @@ export default function BtnEventsListeners(modalSelector, btnSelector, createEdi
         clickModals.closeModal(e, modal);
     });
 
-    // Create/Edit Element and add it to the List Container
-
-    const addNewEditBtn = document.querySelector(createEditBtnSelector);
-
-    addNewEditBtn.addEventListener("click", e => {
+    // Create/Edit Element and add it to the List Container.
+    document.querySelector(createEditBtnSelector).addEventListener("click", e => {
         e.preventDefault();
         createEditFunction();
         modal.close();

@@ -3,7 +3,7 @@ import createTaskDOM from "./createTaskDOM";
 import createProjectDOM from "./createProjectDOM";
 import { retrieveAllDataInLocalStorage } from "../Features/DataInLocalStorage";
 
-// Show All Tasks in the Array when the Webpage loads
+// Show All Available Tasks in the Project/Tasks Array when the Webpage loads.
 export default function webpageLoads() {
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -11,7 +11,7 @@ export default function webpageLoads() {
         showAllTasksInArray();
     })
 }
-// function to show all Tasks in the Tasks Array
+// Function to show all Available Tasks in the DOM.
 function showAllTasksInArray() {
     for (const i in tasksList) {
         createTaskDOM(i, tasksList[i].name, tasksList[i].dueDate, tasksList[i].completed);

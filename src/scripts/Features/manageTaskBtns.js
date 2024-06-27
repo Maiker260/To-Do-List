@@ -6,6 +6,7 @@ import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
 import { modifyDataInLocalStorage } from "./DataInLocalStorage";
 
+// Function to apply the Task Change depending on the button pressed.
 export default function manageTaskBtns() {
 
     const taskModals = handleTaskModals();
@@ -23,10 +24,10 @@ export default function manageTaskBtns() {
         const infoTaskModal = document.querySelector("#task_info_dialog");
         
         if (btnAction === "edit") {
-            taskModals.editTaskModalInfo(taskName, taskIndex);
-            editModal.showModal();
             // Show Available Projects in Edit Task Modal
             showProjectsAvailable("#edit_task_project");
+            taskModals.editTaskModalInfo(taskName, taskIndex);
+            editModal.showModal();
         } else if (btnAction === "delete") {
             taskModals.deleteTaskModalInfo(taskName, taskIndex);
             deleteModal.showModal();

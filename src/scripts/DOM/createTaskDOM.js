@@ -2,6 +2,7 @@ import createIcons from "./createIcons";
 import createElementDOM from "./createElementDOM";
 import taskCompleteStatus from "../Features/TaskCompleteStatus";
 
+// Function to create the Task into the DOM.
 export default function createTaskDOM(index, taskName, dueDate, taskStatus) {
 
     const newElement = createElementDOM();

@@ -7,6 +7,7 @@ import clearMainSectionContent from "./clearMainSectionContent";
 import handleTaskModals from "../DOM/handleTaskModals";
 import { modifyDataInLocalStorage } from "../Features/DataInLocalStorage";
 
+// Function to apply the changes to the Task depending on the Task Button pressed.
 export default function taskBtnsHandler() {
 
     const taskBtns = manageTaskBtns();
@@ -18,6 +19,7 @@ export default function taskBtnsHandler() {
     document.addEventListener("DOMContentLoaded", function() {
         const taskListSection = document.querySelector("#main_content_section_task_list_container");
         taskListSection.addEventListener("click", e => {
+            // Open the Modal depending on which button was pressed
             taskBtns.checkTaskButtonPressed(e);
         });
     });
@@ -59,7 +61,6 @@ export default function taskBtnsHandler() {
 
 
     // Allow the user to close the Modal when clicking outside it.
-    
     editTaskModal.addEventListener("click", (e) => {
         clickingOutsideModals().closeModal(e, editTaskModal);
     })

@@ -1,5 +1,4 @@
-// Modify the Edit/Delete Modal DOM
-
+// Modify the Edit/Delete Project Modal DOM
 export default function handleProjectModals() {
     function editModalInfo(projectName, index) {
         const projectModalMainTitle = document.querySelector("#edit_project_dialog_main_title");

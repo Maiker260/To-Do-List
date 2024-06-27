@@ -1,6 +1,6 @@
 import filterTasks from "../Features/filterTasks";
 
-// Check where the User is currently located in the Website
+// Check where the User is currently located in the Website.
 export default function taskSectionSelected(section) {
 
     switch (section) {

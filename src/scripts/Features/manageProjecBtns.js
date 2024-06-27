@@ -7,6 +7,7 @@ import changeCurrentTitle from "../DOM/changeCurrentTitle";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
 
+// Function to apply the Project Changes depending on which button was pressed.
 export default function manageProjectBtns() {
 
     function checkButtonPressed(e) {

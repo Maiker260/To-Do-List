@@ -1,5 +1,4 @@
-   
-// Function to allow the user to close the Modal when clicking outside it.
+   // Function to allow the user to close the Modal when clicking outside it.
 export default function clickingOutsideModals() {
     function closeModal(e, dialog) {
         const dialogDimensions = dialog.getBoundingClientRect()

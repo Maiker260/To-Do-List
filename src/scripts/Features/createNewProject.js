@@ -6,6 +6,7 @@ import reAssignIndex from "./reAssignIndex";
 import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import { storeDataInLocalStorage } from "./DataInLocalStorage";
 
+// Function to create the Project Object.
 function createNewProject() {
 
     const addNewProjectField = document.querySelector("#add_new_project_title")

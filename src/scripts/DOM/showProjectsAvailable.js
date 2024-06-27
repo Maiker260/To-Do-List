@@ -4,7 +4,7 @@ import createElementDOM from "./createElementDOM";
 // Shows Projects available in the "Project" Dropdown menu in the New Task Section.
 export default function showProjectsAvailable(modal) {
 
-    // Clear All Options from the List
+    // Clear All Options from the List.
     clearSelectOptions(modal);
 
     const newTaskProjectList = document.querySelector(modal);
@@ -19,6 +19,7 @@ export default function showProjectsAvailable(modal) {
     defaultOption.textContent = "Select a Project";
     newTaskProjectList.appendChild(defaultOption)
 
+    // Create the Project Name Option in the Project List.
     projectsList.forEach(project => {
         const projectName = newElement.createElementWithClasses("option");
         projectName.value = project.name;

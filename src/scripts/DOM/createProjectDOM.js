@@ -1,6 +1,7 @@
 import createIcons from "./createIcons";
 import createElementDOM from "./createElementDOM";
 
+// Function to create the Project into the DOM.
 export default function createProjectDOM(index, name) {
 
     const projectList = document.querySelector("#left_side_navbar_second_project_list");

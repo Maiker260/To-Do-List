@@ -1,5 +1,6 @@
 import createElementDOM from "./createElementDOM";
 
+// Function to make the DOM Icons creation easier.
 export default function createIcons(iconID, dataIcon, index, name) {
 
     const editSvg = createSvgIconTemplate(

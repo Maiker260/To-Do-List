@@ -2,6 +2,7 @@ import taskSectionSelected from "./taskSectionSelected";
 import clearMainSectionContent from "./clearMainSectionContent";
 import changeCurrentTitle from "./changeCurrentTitle";
 
+// Function to modify the DOM content depending on the Task Feature pressed.
 export default function replaceTasksContent() {
     const leftSideNavbarBtns = [
         "#left_side_navbar_all_tasks_btn",

@@ -29,5 +29,5 @@ const projectBtns = projectBtnsHandler();
 // Function to Show the Content Selected
 const changeTasksDOMContent = replaceTasksContent();
 
-// Show All Tasks in the Array when the Webpage loads
+// Show All Stored Tasks in the Array when the Webpage loads
 const loadWebpage = webpageLoads();

@@ -7,12 +7,22 @@
 </head>
 <body class="container grid">
     <header class="main_header_section flex">
-        <div class="main_header_section_icon">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30px" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-            </svg>
+        <div class="main_header_section_left_side flex">
+            <div class="main_header_section_icon">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30px" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+            </div>
+            <h1 class="main_header_main_title">My To-Do LIST</h1>
         </div>
-        <h1 class="main_header_main_title">My To-Do LIST</h1>
+        <div id="show_navbar_btn" class="show_navbar_btn">
+            <input id="show_navbar_checkbox" type="checkbox" name="show_navbar_checkbox" class="show_navbar_checkbox">
+            <label for="show_navbar_checkbox">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="45px" height="70" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+                </svg>                  
+            </label>
+        </div>
     </header>
     <nav class="left_side_navbar_section">
         <section class="left_side_navbar_lists_container left_side_navbar_first_list_container">
@@ -30,7 +40,7 @@
                     <form action="dialog" class="add_new_edit_todo_task_dialog_input_area grid">
                         <label for="new_task_name" id="new_task_name_input" class="add_new_edit_todo_task_input_label_container new_edit_task_name_input flex">
                             <h3 class="add_new_edit_todo_task_input_label">Task:</h3>
-                            <input class="add_new_edit_todo_task_input" type="text" name="new_task_name" id="new_task_name" placeholder="Task's Name" required>
+                            <input class="add_new_edit_todo_task_input" type="text" maxlength="30" name="new_task_name" id="new_task_name" placeholder="Task's Name" required>
                         </label>
                         <label for="new_task_description" id="new_task_description_input" class="add_new_edit_todo_task_input_label_container new_edit_task_description_input flex">
                             <h3 class="add_new_edit_todo_task_input_label">Description:</h3>
@@ -55,7 +65,7 @@
                                 <option value="Urgent">Urgent</option>
                             </select>
                         </label>
-                        <button id="new_task_create_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Create Task</button>
+                        <button id="new_task_create_btn" class="new_edit_task_create_btn new_edit_create_btn pointer fix_button_size">Create Task</button>
                     </form>
                 </div>
             </dialog>
@@ -108,7 +118,7 @@
                         <div class="add_new_edit_project_content">
                             <label for="add_new_edit_project_title" class="add_new_edit_project_title_container flex">
                                 <h3>Project Name:</h3>
-                                <input type="text" name="add_new_project_title" id="add_new_project_title" class="add_new_edit_project_title" placeholder="Name">
+                                <input type="text" maxlength="30" name="add_new_project_title" id="add_new_project_title" class="add_new_edit_project_title" placeholder="Name">
                             </label>
                         </div>
                         <button id="new_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer">Create Project</button>
@@ -124,7 +134,7 @@
                         <div class="add_new_edit_project_content">
                             <label for="edit_project_title" class="add_new_edit_project_title_container flex">
                                 <h3 id="edit_project_name">Edit Project</h3>
-                                <input type="text" name="edit_project_title" data-project-id="" data-project-name="" id="edit_project_title" class="add_new_edit_project_title" placeholder="Name">
+                                <input type="text" maxlength="30" name="edit_project_title" data-project-id="" data-project-name="" id="edit_project_title" class="add_new_edit_project_title" placeholder="Name">
                             </label>
                         </div>
                         <button id="edit_project_create_btn" class="new_edit_project_create_btn new_edit_create_btn pointer"></button>
@@ -150,7 +160,7 @@
                 <form action="dialog" class="add_new_edit_todo_task_dialog_input_area grid">
                     <label for="new_task_name" id="new_task_name_input" class="add_new_edit_todo_task_input_label_container new_edit_task_name_input flex">
                         <h3 class="add_new_edit_todo_task_input_label">Task:</h3>
-                        <input id="edit_task_name" class="add_new_edit_todo_task_input" type="text" name="new_task_name"  placeholder="Task's Name" required>
+                        <input id="edit_task_name" class="add_new_edit_todo_task_input" maxlength="30" type="text" name="new_task_name"  placeholder="Task's Name" required>
                     </label>
                     <label for="new_task_description" id="new_task_description_input" class="add_new_edit_todo_task_input_label_container new_edit_task_description_input flex">
                         <h3 class="add_new_edit_todo_task_input_label">Description:</h3>
@@ -175,7 +185,7 @@
                             <option value="Urgent">Urgent</option>
                         </select>
                     </label>
-                    <button id="edit_task_btn" data-index="" class="new_edit_task_create_btn new_edit_create_btn pointer">Edit Task</button>
+                    <button id="edit_task_btn" data-index="" class="new_edit_task_create_btn new_edit_create_btn pointer fix_button_size">Edit Task</button>
                 </form>
             </div>
         </dialog>
@@ -203,7 +213,7 @@
                 <div class="add_new_edit_todo_task_dialog_input_area task_info_dialog_info_section_container grid">
                     <div class="task_info_dialog_info_container flex">
                         <h3 class="task_info_dialog_info_title">Name:</h3>
-                        <p id="task_info_dialog_task_name" data-info="task_name" class="task_info_dialog_info"></p>
+                        <p id="task_info_dialog_task_name" maxlength="30" data-info="task_name" class="task_info_dialog_info"></p>
                     </div>
                     <div class="task_info_dialog_info_container flex">
                         <h3 class="task_info_dialog_info_title">Description:</h3>
@@ -225,7 +235,7 @@
                         <h3 class="task_info_dialog_info_title">Status:</h3>
                         <p id="task_info_dialog_task_status" data-info="task_status" class="task_info_dialog_info"></p>
                     </div>
-                    <button id="info_task_btn" class="new_edit_task_create_btn new_edit_create_btn pointer">Close</button>
+                    <button id="info_task_btn" class="new_edit_task_create_btn new_edit_create_btn pointer fix_button_size">Close Info</button>
                 </div>
             </div>
         </dialog>

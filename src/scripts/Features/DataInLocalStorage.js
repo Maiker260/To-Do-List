@@ -40,9 +40,7 @@ export function retrieveAllDataInLocalStorage() {
                 const transformStringToProjectObject = JSON.parse(localStorage.getItem(localStorage.key(i)));
                 projectsList.push(transformStringToProjectObject);
             }
-        }
-    } else {
-        console.log("No Items Found");
+        }   
     }
         
 }

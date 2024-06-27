@@ -1,4 +1,4 @@
-
+// Function to check the current Task Status.
 export default function taskCompleteStatus() {
 
     function checkTaskStatus(task) {

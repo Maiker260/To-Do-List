@@ -1,12 +1,37 @@
+import { tasksList } from "../..";
 
+// Function to edit the Tasks Modal Information depending on the button pressed.
 export default function handleTaskModals() {
 
     function editTaskModalInfo(taskName, taskindex) {
         const editTaskModalMainTitle = document.querySelector("#edit_task_dialog_main_title");
         const editTaskModalBtn = document.querySelector("#edit_task_btn");
+        const taskInArray =  tasksList[findTaskIndex(taskindex)];
+
+        const currenTaskValues = {
+            name: taskInArray.name,
+            description: taskInArray.description,
+            project: taskInArray.project,
+            dueDate: taskInArray.dueDate,
+            priority: taskInArray.priority
+        }
+        const editModalValues = {
+            name: document.querySelector("#edit_task_name"),
+            description: document.querySelector("#edit_task_description"),
+            project: document.querySelector("#edit_task_project"),
+            dueDate: document.querySelector("#edit_task_due_date"),
+            priority: document.querySelector("#edit_task_priority")
+        };
 
         editTaskModalMainTitle.textContent = "Edit Task " + `"` + taskName + `"`;
         editTaskModalBtn.dataset.index = taskindex;
+
+        // Show the current Task Value to make the edit process easier.
+        editModalValues.name.value = currenTaskValues.name;
+        editModalValues.description.value = currenTaskValues.description;
+        editModalValues.project.value = currenTaskValues.project;
+        editModalValues.dueDate.value = currenTaskValues.dueDate;
+        editModalValues.priority.value = currenTaskValues.priority;
     }
     
     function deleteTaskModalInfo(taskName, taskindex) {
@@ -37,8 +62,10 @@ export default function handleTaskModals() {
         infoTaskValues.name.textContent = task.name;
         infoTaskValues.description.textContent = task.description;
         infoTaskValues.project.textContent = task.project;
+        // Change the Date Format in the Modal Information 
         infoTaskValues.dueDate.textContent = changeDateFormat(task.dueDate);
         infoTaskValues.priority.textContent = task.priority;
+        // Change the Task Status Name in the Modal Information 
         infoTaskValues.status.textContent = checkTaskStatus(task.completed);
     }
 
@@ -75,7 +102,11 @@ function checkTaskStatus(status) {
     }
 }
 
-// Change the Date format to show a more detailed Date
+// Change the Date format to show a more user-friendly Date.
 function changeDateFormat(date) {
     return new Date(date).toDateString();
+}
+
+function findTaskIndex(tIndex) {
+    return tasksList.findIndex(task => task.index === tIndex);
 }

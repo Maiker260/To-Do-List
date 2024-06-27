@@ -2,6 +2,7 @@ import { tasksList } from "../..";
 import reAssignIndex from "./reAssignIndex";
 import createTaskDOM from "../DOM/createTaskDOM";
 
+// Function to filter the Projects depending on the Criteria.
 export default function filterProjects(project) {
     filterAndCreateProject(task => task.project == project);
 }

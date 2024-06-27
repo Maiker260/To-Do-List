@@ -5,6 +5,7 @@ import checkCurrentTaskSectionTitle from "../DOM/checkCurrentTaskSectionTitle";
 import clearMainSectionContent from "../DOM/clearMainSectionContent";
 import { storeDataInLocalStorage } from "./DataInLocalStorage";
 
+// Function to create the Task Object.
 function createNewTask() {    
 
     class Task {

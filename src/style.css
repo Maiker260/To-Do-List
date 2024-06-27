@@ -58,7 +58,7 @@
 
 
 /* Main Header */
-.main_header_section { 
+.main_header_section {
     grid-area: main_header_section;
     align-items: center;
     gap: 0.5em;
@@ -66,6 +66,11 @@
     background: var(--main_color);
     color: white;
     padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main_header_section_left_side {
+    gap: 0.3em;
 }
 
 .main_header_section_icon {
@@ -78,7 +83,9 @@
     color: var(--white);
 }
 
-
+.show_navbar_checkbox {
+    /* display: none; */
+}
 
 /* Left Side Navbar */
 
@@ -181,7 +188,7 @@ dialog::backdrop {
 .add_new_edit_todo_task_dialog_input_area {
     padding: 1em 2em;
     grid-template-columns: 1fr; 
-    grid-template-rows: repeat(6, 1fr); 
+    /* grid-template-rows: repeat(6, 1fr);  */
     gap: 0px 0px;
 }
 
@@ -310,7 +317,23 @@ dialog::backdrop {
 
 .task_info_dialog_info {
     width: 100%;
+    max-width: 400px;
     font-size: 1.1rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#task_info_dialog_task_description {
+    max-width: 400px;
+    word-wrap: break-word;
+    text-wrap: wrap;
+    overflow:auto;
+}
+
+.fix_button_size {
+    padding: 1em 0;
+    height: auto;
 }
 
 
@@ -387,15 +410,51 @@ dialog::backdrop {
         padding: 1em;
     }
 
-    .main_footer {
-        background-color: red;
-    }  
 }
 
 @media (max-width: 780px) {
 
+    /* REMOVE WHEN READY */
+    .main_footer {
+        background-color: red;
+    }
 
+    /* Layout */
+    .container {
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: 5em 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .main_header_section {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .main_content_section { 
+        grid-area: 2 / 1 / 3 / 3;
+    }
 
+    /* Header */
+
+    .main_header_section {
+        justify-content: space-between;
+    }
+    .show_navbar_btn {
+        display: inline-flex;
+        align-self: center;
+        justify-content: end;
+    }
+
+    /* Navigation Pane */
+    .left_side_navbar_section {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        overflow-x: hidden;
+        transition: all 0.4s ease;
+        width: 55%;
+    }
 }
 
 
