@@ -5,6 +5,7 @@ import replaceTasksContent from './scripts/DOM/replaceTasksContent';
 import webpageLoads from './scripts/DOM/DOMLoads';
 import projectBtnsHandler from './scripts/DOM/projectBtnsHandler';
 import taskBtnsHandler from './scripts/DOM/taskBtnsHandler';
+import manageMobileViewSidebar from './scripts/Features/manageMobileViewSidebar';
 
 // CSS Files
 import './style.css';
@@ -28,6 +29,9 @@ const projectBtns = projectBtnsHandler();
 
 // Function to Show the Content Selected
 const changeTasksDOMContent = replaceTasksContent();
+
+// Function to show or Hide the Sidebar for Mobile View
+const showSidebar = manageMobileViewSidebar();
 
 // Show All Stored Tasks in the Array when the Webpage loads
 const loadWebpage = webpageLoads();

@@ -87,6 +87,10 @@
     display: none;
 }
 
+.close_navbar_btn {
+    display: none;
+}
+
 /* Left Side Navbar */
 
 .left_side_navbar_section {
@@ -443,7 +447,6 @@ dialog::backdrop {
     }
 
     /* Header */
-
     .main_header_section {
         justify-content: space-between;
     }
@@ -460,8 +463,25 @@ dialog::backdrop {
         right: 0;
         height: 100%;
         overflow-x: hidden;
-        transition: all 0.4s ease;
+        transition: all 0.4s ease-in-out;
         width: 55%;
+        padding: 20px 20px 0px 20px;
+    }
+
+    .close_navbar_btn {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        margin-bottom: 1.2em;
+        justify-content: center;
+    }
+
+    .sidebar_clicked_closed {
+        right: -500px;
+    }
+    
+    .sidebar_clicked_open {
+        right: 0;
     }
 }
 
