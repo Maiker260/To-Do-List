@@ -1702,6 +1702,7 @@ function handleProjectModals() {
         projectModalMainTitle.textContent = "Do you want to delete " + `"` + projectName + `"` + "?";
         projectModalMainTitle.dataset.name = "delete";
         confirmName.textContent = "Confirm the Project Name: ";
+        inputPlaceHolder.placeholder = "DELETE"
         inputPlaceHolder.dataset.projectId = index;
         inputPlaceHolder.dataset.projectName = projectName;
         confirmDeleteButton.textContent = "Delete Project";
