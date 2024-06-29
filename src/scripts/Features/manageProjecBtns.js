@@ -62,11 +62,11 @@ function modifyTaskProject(filter, newProjectName) {
 
 function delBtn(index, name) {
     const projectNameConfirm = document.querySelector("#edit_project_title").value
-    if (name === projectNameConfirm) {
+    if (projectNameConfirm == "DELETE") {
         deleteProject(findProject(index));
         unassignTaskProject(findTask(name));
     } else {
-        alert("Wrong Project Name, Project: " + projectNameConfirm + " does not match. Try again.");
+        alert("Type DELETE to confirm.");
     }
 }
 

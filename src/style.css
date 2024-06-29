@@ -418,11 +418,6 @@ dialog::backdrop {
 
 @media (max-width: 780px) {
 
-    /* REMOVE WHEN READY */
-    .main_footer {
-        background-color: red;
-    }
-
     /* Layout */
     .container {
         display: grid;
@@ -483,18 +478,62 @@ dialog::backdrop {
     .sidebar_clicked_open {
         right: 0;
     }
-}
+
+    .remove_in_mobile_view {
+        display: none;
+    }
 
 
-/* Main Footer TO_REMOVE_LATER */
-.main_footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    font-size: 2rem;
-    width: 100%;
-    min-height: 1em;
-    border: 1px solid #ededed;
+    /* Modal Project */
+    .add_new_edit_dialog_container {
+        min-width: 22em;
+    }
+
+    .add_new_edit_dialog_main_title_container {
+        display: flex;
+        justify-content: center;
+   }
+   
+   .add_new_edit_project_dialog_main_title {
+       overflow: hidden;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       width: 325px;
+   }
+   
+    .add_new_edit_project_title {
+        max-width: 12em;
+    }
+
+    
+    /* Modal Task */
+    .add_new_edit_project_title_container {
+       gap: 0.3em;
+    }
+
+   .add_new_edit_todo_task_dialog_main_title {
+       text-overflow: ellipsis;
+       overflow: hidden;
+       white-space: nowrap;
+       width: 310px;
+    }
+
+    .task_info_dialog_info_container {
+        max-width: 18.6em;
+    }
+
+
+   /* Main Section */
+   .main_content_section_task_description_left {
+	    width: 30%;
+    }
+
+    .main_content_section_task_description_right {
+        gap: 0.7em;
+    }
+
+    .main_content_section_task_container {
+        padding: 1em 0 1em 0;
+    }
+
 }

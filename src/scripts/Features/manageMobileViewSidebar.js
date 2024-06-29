@@ -7,13 +7,6 @@ export default function manageMobileViewSidebar() {
     sidebarCheckbox.addEventListener("click", () => {
         checkCheckboxStatus(sidebarCheckbox);
     });
-
-    // Allow the user to close the Modal when clicking outside it.
-    // const navBarSection = document.querySelector("#left_side_navbar_section");
-
-    // navBarSection.addEventListener("click", (e) => {
-    //     closeSidebar(e, navBarSection, sidebarCheckbox);
-    // })
 }
 
 function checkCheckboxStatus(checkbox) {
@@ -27,20 +20,3 @@ function checkCheckboxStatus(checkbox) {
         navBarSection.classList.add("sidebar_clicked_closed")
     }
 }
-
-
-
-// function closeSidebar(e, sidebar, checkbox) {
-//     const dialogDimensions = sidebar.getBoundingClientRect()
-//     if (
-//         e.clientX < dialogDimensions.left ||
-//         e.clientX > dialogDimensions.right ||
-//         e.clientY < dialogDimensions.top ||
-//         e.clientY > dialogDimensions.bottom
-//     ) {
-//         checkbox.checked = false;
-//         console.log("HOLA");
-//     } else {
-//         console.log(dialogDimensions);
-//     }
-// }
