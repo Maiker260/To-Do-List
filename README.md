@@ -10,12 +10,12 @@ Follow these steps to run the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/your-todo-app.git
+   git clone git@github.com:Maiker260/To-Do-List.git
    ```
 
 2. **Install dependencies**
    ```bash
-   cd your-todo-app
+   cd To-Do-List
    npm install
    ```
 
